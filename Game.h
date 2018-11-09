@@ -1,7 +1,3 @@
-//
-//TEST///////
-//
-
 #ifndef MEMOARRR_GAME_H
 #define MEMOARRR_GAME_H
 
