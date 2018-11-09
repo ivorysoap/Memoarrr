@@ -8,6 +8,18 @@
 
 class Board {
 
+public:
+
+    bool isFaceUp(const Letter&, const Number&);
+
+    bool turnFaceUp(const Letter&, const Number&);
+
+    bool turnFaceDown(const Letter&, const Number&);
+
+    void reset();
+
+    void toString();
+
 };
 
 
