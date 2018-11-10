@@ -17,8 +17,7 @@ class Player{
     enum Side {TOP = 1, BOTTOM, LEFT, RIGHT};
     int rubies = 0;
     bool active;
-    
-    
+      
 public:
     static int player_count;
     Player(const string& _name);
