@@ -13,9 +13,9 @@ using namespace std;
 
 class CardDeck : public Deck<Card> {
     
-    void shuffle();
-    Card* getNext();
-    bool isEmpty() const; 
+    void shuffle()override;
+    Card* getNext()override;
+    bool isEmpty() const override ; 
     
 public:
     static CardDeck& make_CardDeck();
