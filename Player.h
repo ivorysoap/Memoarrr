@@ -20,10 +20,11 @@ class Player{
       
 public:
     static int player_count; //keeps the number of players and thus assign the player side when player object is created
-    Player(const string& _name);
+   
+    Player(const string& _name): name(_name){}
     
     string getName() const {return name;}
-    void setActive(bool);
+    void setActive(bool) {active = 1;}
     bool isActive() const {return active;}
     int getNRubies() const {return rubies;}
     void addReward(const Reward&);

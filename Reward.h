@@ -14,8 +14,11 @@ using namespace std;
 
 class Reward{
     
-    enum Rubies {ONE = 1, TWO, THREE, FOUR};
-    Reward(Rubies); //private constructor
+public:  enum Rubies {ONE = 1, TWO, THREE, FOUR} const enumField;
+private: Reward(Rubies r): enumField(r){}; //private constructor
+    
+public:
+    int getRubies(){return Rubies;}
     
 };
 

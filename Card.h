@@ -12,11 +12,11 @@ using namespace std;
 #define CARD_H
 
 class Card{
+   
+    enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS} const enumField;
+    enum FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW} const enumField2;
     
-    enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS};
-    enum FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW};
-    
-    Card(FaceAnimal, FaceBackground);//private constructor
+   Card(FaceAnimal a, FaceBackground b): enumField(a), enumField2(b) {}//private constructor
     
 };
 
