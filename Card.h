@@ -16,7 +16,7 @@ class Card{
     enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS};
     enum FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW};
     
-    Card(FaceAnimal, FaceBackground);
+    Card(FaceAnimal, FaceBackground);//private constructor
     
 };
 

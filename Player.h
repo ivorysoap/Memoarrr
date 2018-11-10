@@ -19,7 +19,7 @@ class Player{
     bool active;
       
 public:
-    static int player_count;
+    static int player_count; //keeps the number of players and thus assign the player side when player object is created
     Player(const string& _name);
     
     string getName() const {return name;}

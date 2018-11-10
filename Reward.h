@@ -15,7 +15,7 @@ using namespace std;
 class Reward{
     
     enum Rubies {ONE = 1, TWO, THREE, FOUR};
-    Reward(Rubies);
+    Reward(Rubies); //private constructor
     
 };
 
