@@ -13,10 +13,14 @@ using namespace std;
 
 class Card{
    
+    bool isFaceUp;
+    char disp[3][3];
     enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS} const enumField;
     enum FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW} const enumField2;
     
-   Card(FaceAnimal a, FaceBackground b): enumField(a), enumField2(b) {}//private constructor
+   Card(FaceAnimal a, FaceBackground b);
+public:
+    friend ostream& operator<<(ostream&, const Card&);
     
 };
 
