@@ -29,6 +29,7 @@ public:
     int getNRubies() const {return rubies;}
     void addReward(const Reward&);
     void setDisplayMode(bool endOfGame);
+    Side getSide() { return this->enumField;}
 };
 
 #endif /* PLAYER_H */
