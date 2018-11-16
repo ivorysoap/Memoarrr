@@ -14,11 +14,11 @@ using namespace std;
 class Player{
     
     string name;
-    enum Side {TOP = 1, BOTTOM, LEFT, RIGHT};
     int rubies = 0;
     bool active;
       
 public:
+    enum Side {TOP = 1, BOTTOM, LEFT, RIGHT} const enumField;
     static int player_count; //keeps the number of players and thus assign the player side when player object is created
    
     Player(const string& _name): name(_name){}
