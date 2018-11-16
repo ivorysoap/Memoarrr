@@ -28,8 +28,12 @@ public:
     bool isActive() const {return active;}
     int getNRubies() const {return rubies;}
     void addReward(const Reward&);
-    void setDisplayMode(bool endOfGame);
+    void setDisplayMode(bool endOfGame); //???
     Side getSide() { return this->enumField;}
+    
+   // void setSide(Side); For now I don't think we need this method.
+    friend ostream& operator<<(ostream&, const Player&);
+
 };
 
 #endif /* PLAYER_H */
