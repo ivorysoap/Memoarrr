@@ -5,13 +5,15 @@
 class Game {
 private:
 
-    final Board board;
+    static Board board;
+    int round;
+    vector<Player> players;
 
 public:
 
     int getRound();
 
-    void addPlayer();
+    void addPlayer(const Player&);
 
     Player& getPlayer();
 
