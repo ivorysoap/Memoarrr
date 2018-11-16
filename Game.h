@@ -2,6 +2,10 @@
 #define MEMOARRR_GAME_H
 
 
+#include "Player.h"
+#include "Card.h"
+#include "Board.h"
+
 class Game {
 private:
 
@@ -15,7 +19,7 @@ public:
 
     void addPlayer(const Player&);
 
-    Player& getPlayer();
+    Player& getPlayer(Side);
 
     const Card* getPreviousCard();
 

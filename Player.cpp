@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Player.h"
+#include "Reward.h"
 
 using namespace std;
 
