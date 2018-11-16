@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Player.h"
+#include "Reward.h"
 
 using namespace std;
 
@@ -9,7 +10,7 @@ Player::Player(const string& _name): name(_name){
     
     player_count++;
     switch(player_count){
-        case 1: Player::enumFild = 1;
+        case 1: Player::enumField = 1;
         case 2: Player::enumField = 2;
         case 3: Player::enumField = 3;
         case 4: Player::enumField = 4;

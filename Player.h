@@ -18,7 +18,7 @@ class Player{
     bool active;
       
 public:
-    enum Side {TOP = 1, BOTTOM, LEFT, RIGHT} const enumField;
+    enum Side {TOP = 1, BOTTOM, LEFT, RIGHT}  enumField;
     static int player_count; //keeps the number of players and thus assign the player side when player object is created
    
     Player(const string& _name): name(_name){}
