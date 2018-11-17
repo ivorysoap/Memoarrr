@@ -15,6 +15,9 @@ class Board {
     const int ROWS = 5;
     const int COLUMNS = 5;
 
+    const int FACE_UP = 1;
+    const int FACE_DOWN = 0;
+
     CardDeck cardDeck;
 
     //2D vector. Holds a vector of five rows, each of which holds five <Card,bool> tuples.  The bool represents the facing-up status of the card.
@@ -32,6 +35,10 @@ public:
     bool turnFaceUp(const Letter&, const Number&);
 
     bool turnFaceDown(const Letter&, const Number&);
+
+    Card* getCard(const Letter&, const Number&);
+
+    void setCard(const Letter&, const Number&, Card*);
 
     void reset();
 
