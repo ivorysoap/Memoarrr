@@ -6,6 +6,8 @@
  * Created on 9 novembre 2018, 15:39
  */
 #include <iostream>
+#include "Reward.h"
+
 using namespace std;
 
 #ifndef PLAYER_H

@@ -6,6 +6,8 @@
  * Created on 10 novembre 2018, 02:02
  */
 #include <iostream>
+#include "Deck.h"
+
 using namespace std;
 
 #ifndef CARDDECK_H

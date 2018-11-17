@@ -1,4 +1,4 @@
-#include <iosteam>
+#include <iostream>
 #include <vector>
 #include <tuple>
 #include "Board.h"
@@ -6,12 +6,12 @@
 
 using namespace std;
 
-Board::Board(const CardDeck &deck){
+Board::Board(){
 
     for(int i = 0; i < ROWS; i++){
         vector<Card,bool> row;
         for(int j = 0; j < COLUMNS; j++){
-            row.push_back(deck.getNext());
+            row.push_back(cardDeck.getNext());
         }
         board.push_back(row);
     }
