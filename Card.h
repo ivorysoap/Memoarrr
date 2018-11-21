@@ -23,7 +23,7 @@ class Card{
    Card(FaceAnimal a, FaceBackground b);
 public:
     int getNRows()const{ return ROWS;}
-    char getCardUncovered(){return cardUncovered;}
+    //char getCardUncovered(){return cardUncovered;}
     void print()const;
     string operator()(int) const;
     //friend ostream& operator<<(ostream&, const Card&);
