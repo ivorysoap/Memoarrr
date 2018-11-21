@@ -2,7 +2,6 @@
 /* 
  * File:   Player.h
  * Author: Boris Nz
- *
  * Created on 9 novembre 2018, 15:39
  */
 #include <iostream>

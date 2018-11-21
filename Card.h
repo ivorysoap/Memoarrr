@@ -2,7 +2,6 @@
 /* 
  * File:   Card.h
  * Author: Boris Nz
- *
  * Created on 10 novembre 2018, 00:45
  */
 #include <iostream>
@@ -13,8 +12,9 @@ using namespace std;
 
 class Card{
    
-    bool isFaceUp;
+    //bool isFaceUp;
     char disp[3][3];
+    const char dispFace; const char dispBack; // First letter of the Face and Background. Will be usefull to print the card.
     enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS} const enumField;
     enum FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW} const enumField2;
     
