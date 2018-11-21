@@ -9,18 +9,24 @@ using namespace std;
 
 #ifndef CARD_H
 #define CARD_H
+#define ROWS 3
 
 class Card{
    
-    //bool isFaceUp;
-    char disp[3][3];
-    const char dispFace; const char dispBack; // First letter of the Face and Background. Will be usefull to print the card.
-    enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS} const enumField;
-    enum FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW} const enumField2;
+    const static char cardUncovered[][3];
+    char cardDisp[ROWS][3]; //3x3 array to display the card
+    char dispFace; char dispBack; // First letter of the Face and Background. Will be usefull to print the card
+    
+    enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS} const enumFace;
+    enum FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW} const enumBack;
     
    Card(FaceAnimal a, FaceBackground b);
 public:
-    friend ostream& operator<<(ostream&, const Card&);
+    int getNRows()const{ return ROWS;}
+    char getCardUncovered(){return cardUncovered;}
+    void print()const;
+    string operator()(int) const;
+    //friend ostream& operator<<(ostream&, const Card&);
     
 };
 
