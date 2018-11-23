@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <tuple>
 #include "Board.h"
 #include "Card.h"
 
@@ -9,9 +8,9 @@ using namespace std;
 Board::Board(){
 
     for(int i = 0; i < ROWS; i++){
-        vector<Card,bool> row;
+        vector<pair<Card*,bool>> row;
         for(int j = 0; j < COLUMNS; j++){
-            row.push_back(cardDeck.getNext());  //This needs fixing.  Maybe don't use a CardDeck since its getNext() method is private?
+            row.push_back(make_pair(cardDeck.getNext(), false));  //This needs fixing.  Maybe don't use a CardDeck since its getNext() method is private?
         }
         board.push_back(row);
     }
@@ -52,13 +51,13 @@ bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &numbe
 
 }
 
-Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
+static Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
 
     return *get<0>(board[letter][number]);
 
 }
 
-void Board::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
+static void Board::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
 
     get<0>(board[letter][number]) = card;
 

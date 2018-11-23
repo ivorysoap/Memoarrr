@@ -10,7 +10,11 @@ class Game {
 private:
 
     static Board board;
+
     int round;
+
+    Card currentCard = nullptr, previousCard = nullptr;
+
     vector<Player> players;
 
 public:

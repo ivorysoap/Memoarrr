@@ -17,6 +17,7 @@
 
 - [ ] Add exception (OutOfRange) for all methods
 - [ ] Add exception (NoMoreCards) for Board class
+- [ ] Add << operator implementation
 
 
 ===GAME===

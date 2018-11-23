@@ -16,7 +16,7 @@ using namespace std;
 class CardDeck : public Deck<Card> {
     
     void shuffle()override;
-    Card* getNext()override;
+    Card* getNext();
     bool isEmpty() const override ; 
     
 public:

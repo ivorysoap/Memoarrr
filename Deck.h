@@ -14,9 +14,17 @@ template <class T> //template to pick class type Card or Reward
 class Deck{
     
 public:
+
    virtual void shuffle() = 0;
-   virtual T* getNext() = 0;
+
    virtual bool isEmpty() const = 0;
+
+    T* getNext(){
+
+        return nullptr;
+
+    }
+
 };
 
 #endif /* DECK_H */

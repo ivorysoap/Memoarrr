@@ -6,6 +6,7 @@
 #define MEMOARRR_BOARD_H
 
 #include <vector>
+#include <tuple>
 #include "Card.h"
 #include "CardDeck.h"
 
@@ -18,10 +19,10 @@ class Board {
     const int FACE_UP = 1;
     const int FACE_DOWN = 0;
 
-    CardDeck cardDeck;
+    Deck<Card> cardDeck;
 
     //2D vector. Holds a vector of five rows, each of which holds five <Card,bool> tuples.  The bool represents the facing-up status of the card.
-    vector< vector<Card,bool> > board;
+    static vector< vector<pair<Card*,bool>> > board;
 
 public:
 

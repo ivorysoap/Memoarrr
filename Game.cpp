@@ -50,7 +50,9 @@ const Card* Game::getPreviousCard(){
 
 void Game::setCurrentCard(const Card *card){
 
-    //Unimplemented
+    previousCard = currentCard;
+
+    currentCard = *card;
 
 }
 
