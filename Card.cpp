@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const char Card::cardUncovered[3][3] = {'z','z','z','z','z','z','z','z','z'};
+const string Card::cardUncovered[3] = {"zzz", "zzz", "zzz"};
 
 Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b){
     
@@ -53,4 +53,17 @@ string Card::operator()(int index)const{ //Overload of operator () in order to p
     return rowString;
 }
 
-//ostream& operator<<(ostream& os, const Card& c);
+ostream& operator<<(ostream& os, const Card& c){
+    
+    if(c.isTurnedUp == true){
+        
+    for(int i=0; i<Card::ROWS; i++){
+        os << c(i)<< endl; }
+    }
+    
+    else {
+        for(int i=0; i<Card::ROWS; i++){
+        os << Card::cardUncovered[i]<< endl; }   
+    }
+    return os;
+}
