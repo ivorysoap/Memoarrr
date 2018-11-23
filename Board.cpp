@@ -26,13 +26,29 @@ bool Board::isFaceUp(const Board::Letter &letter, const Board::Number &number){
 
 bool Board::turnFaceUp(const Board::Letter &letter, const Board::Number &number){
 
-    get<1>(board[letter][number]) = FACE_UP;
+    if(get<1>(board[letter][number]) == FACE_DOWN){
+
+        get<1>(board[letter][number]) == FACE_UP;
+        return true;
+
+    }
+    else{
+        return false;
+    }
 
 }
 
 bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &number){
 
-    get<1>(board[letter][number]) = FACE_DOWN;
+    if(get<1>(board[letter][number]) == FACE_UP){
+
+        get<1>(board[letter][number]) == FACE_DOWN;
+        return true;
+
+    }
+    else{
+        return false;
+    }
 
 }
 

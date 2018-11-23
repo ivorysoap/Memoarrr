@@ -19,13 +19,17 @@ public:
 
     void addPlayer(const Player&);
 
-    Player& getPlayer(Side);
+    Player& getPlayer(const Player::Side&);
 
     const Card* getPreviousCard();
 
     const Card* getCurrentCard();
 
     void setCurrentCard(const Card*);
+
+    Card* getCard()(const Board::Letter&, const Board::Number&);
+
+    void setCard(const Board::Letter&, const Board::Number&, Card*);
 
     void toString();
 

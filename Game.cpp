@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "Player.h"
 
+
 using namespace std;
 
 /**
@@ -41,19 +42,31 @@ Player& Game::getPlayer(const Player::Side &side){
 
 }
 
-const Card* getPreviousCard(){
+const Card* Game::getPreviousCard(){
 
     //Unimplemented
 
 }
 
-const Card* getNextCard(){
+void Game::setCurrentCard(const Card *card){
 
     //Unimplemented
 
 }
 
-void setCurrentCard(const Card card*){
+Card* Game::getCard(const Board::Letter &letter, const Board::Number &number){
+
+    return Board::getCard(letter, number);
+
+}
+
+void Game::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
+
+    Board::setCard(letter, number, card);
+
+}
+
+void Game::toString(){
 
     //Unimplemented
 

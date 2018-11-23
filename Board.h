@@ -36,9 +36,9 @@ public:
 
     bool turnFaceDown(const Letter&, const Number&);
 
-    Card* getCard(const Letter&, const Number&);
+    static Card* getCard(const Letter&, const Number&);  //Not sure why this method is static
 
-    void setCard(const Letter&, const Number&, Card*);
+    static void setCard(const Letter&, const Number&, Card*);  //Nor this one.  See .todo for more details
 
     void reset();
 

@@ -1,5 +1,27 @@
 - [x] Set up GitHub repo
-- [ ] Figure out MemoArr
 - [ ] Figure out abstract factory design pattern
 
+===MAIN===
+
+===PLAYER===
+
+===CARD===
+
+===REWARD===
+
+===DECK/CARDDECK/REWARDDECK===
+
 - [ ] Implement Deck and CardDeck methods
+
+===BOARD===
+
+- [ ] Add exception (OutOfRange) for all methods
+- [ ] Add exception (NoMoreCards) for Board class
+
+
+===GAME===
+
+- [ ] Issue: Game::getCard and Game::setCard , which are wrappers for Board::getCard and Board::setCard, were showing errors unless I made Board::getCard and Board::setCard static methods.  (Don't think it makes a difference since Board should never be instantiated more than once)
+
+===RULES
+
