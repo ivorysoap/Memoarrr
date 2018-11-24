@@ -14,7 +14,6 @@ Board::Board(){
         }
         board.push_back(row);
     }
-
 }
 
 bool Board::isFaceUp(const Board::Letter &letter, const Board::Number &number){

@@ -15,9 +15,11 @@ using namespace std;
 
 class CardDeck : public Deck<Card> {
     
-    void shuffle()override;
-    Card* getNext();
-    bool isEmpty() const override ; 
+    //these methods will be implemented in Deck as public
+    
+    //void shuffle()override;
+    //Card* getNext();
+    //bool isEmpty() const override ; 
     
 public:
     static CardDeck& make_CardDeck();

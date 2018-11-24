@@ -15,9 +15,9 @@ class Deck{
     
 public:
 
-   virtual void shuffle() = 0;
+    void shuffle();
 
-   virtual bool isEmpty() const = 0;
+    bool isEmpty();
 
     T* getNext(){
 
