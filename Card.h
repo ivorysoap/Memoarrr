@@ -8,6 +8,7 @@
 #ifndef CARD_H
 #define CARD_H
 #include <iostream>
+#include "Deck.h"
 
 using namespace std;
 class Card{
@@ -17,7 +18,8 @@ class Card{
     const static string cardUncovered[3];
     char cardDisp[ROWS][3]; //3x3 array to display the card
     char dispFace; char dispBack; // First letter of the Face and Background. Will be usefull to print the card
-   
+
+    Card(); //Blank constructor to initialize a random card.
    Card(FaceAnimal a, FaceBackground b);
 public:
     enum FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS} const enumFace;
@@ -33,6 +35,7 @@ public:
     operator FaceBackground()const {return this->enumBack;} //cast operator to FaceBackground
         
     friend ostream& operator<<(ostream&, const Card&);
+    friend Deck::Deck(int);
 };
 
 #endif /* CARD_H */
