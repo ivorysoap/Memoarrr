@@ -12,9 +12,13 @@ using namespace std;
 #ifndef REWARD_H
 #define REWARD_H
 
+enum class Rubies {ONE = 1, TWO, THREE, FOUR};
+
 class Reward{
     
-public:  enum Rubies {ONE = 1, TWO, THREE, FOUR} const enumField;
+    friend class RewardDeck;
+    const Rubies enumField;
+
 private: Reward(Rubies r): enumField(r){}; //private constructor
     
 public:

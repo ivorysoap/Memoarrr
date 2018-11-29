@@ -8,12 +8,11 @@
 
 #ifndef REWARDDECK_H
 #define REWARDDECK_H
+#include "Deck.h"
 
 class RewardDeck : public Deck<Reward> {
     
-    void shuffle()override;
-    Card* getNext()override;
-    bool isEmpty() const override ; 
+    static RewardDeck* rewardD;
     
 public:
     static RewardDeck& make_RewardDeck();

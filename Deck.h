@@ -8,7 +8,7 @@
 #define DECK_H
 
 #include <iostream>
-#include <vector>
+#include <stack>
 #include "Card.h"
 
 using namespace std;
@@ -16,9 +16,9 @@ using namespace std;
 template <class T> //template to pick class type Card or Reward
 class Deck{
 
-    vector<T> deck;
+    protected: stack<T> deck;
 
-    Deck(int numItems=52);
+    //Deck(int numItems=52); I'm not sure we need a constructor
     
 public:
 
@@ -33,6 +33,5 @@ public:
     }
 
 };
-
 #endif /* DECK_H */
 

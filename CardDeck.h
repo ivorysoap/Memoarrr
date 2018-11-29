@@ -5,21 +5,18 @@
  *
  * Created on 10 novembre 2018, 02:02
  */
-#include <iostream>
-#include "Deck.h"
-
-using namespace std;
 
 #ifndef CARDDECK_H
 #define CARDDECK_H
+#include "Deck.h"
+#include <stack>
+
+using namespace std;
 
 class CardDeck : public Deck<Card> {
     
-    //these methods will be implemented in Deck as public
-    
-    //void shuffle()override;
-    //Card* getNext();
-    //bool isEmpty() const override ; 
+    static CardDeck* cardD;
+    CardDeck(){}
     
 public:
     static CardDeck& make_CardDeck();

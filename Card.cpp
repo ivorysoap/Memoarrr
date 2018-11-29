@@ -1,5 +1,6 @@
-#include <iostream>
+
 #include "Card.h"
+#include <iostream>
 
 using namespace std;
 
@@ -9,20 +10,20 @@ Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b){
     
     switch(enumFace){
         
-        case CRAB: dispFace = 'C';
-        case PENGUIN: dispFace = 'P';
-        case OCTOPUS: dispFace = 'O';
-        case TURTLE: dispFace = 'T';
-        case WALRUS: dispFace = 'W';     
+        case FaceAnimal::CRAB: dispFace = 'C';
+        case FaceAnimal::PENGUIN: dispFace = 'P';
+        case FaceAnimal::OCTOPUS: dispFace = 'O';
+        case FaceAnimal::TURTLE: dispFace = 'T';
+        case FaceAnimal::WALRUS: dispFace = 'W';     
     }
     
     switch(enumBack){
         
-        case RED: dispBack = 'r';
-        case GREEN: dispBack = 'g';
-        case PURPLE: dispBack = 'p';
-        case BLUE: dispBack = 'b';
-        case YELLOW: dispBack = 'y';   
+        case FaceBackground::RED: dispBack = 'r';
+        case FaceBackground::GREEN: dispBack = 'g';
+        case FaceBackground::PURPLE: dispBack = 'p';
+        case FaceBackground::BLUE: dispBack = 'b';
+        case FaceBackground::YELLOW: dispBack = 'y';   
     }
     
     for(int i = 0; i<3; i++){       //Loop to fill the 3x3 array cardDisp
@@ -34,13 +35,13 @@ Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b){
     }
 }
 
-Card::Card(){
+/*Card::Card(){
 
     Card(static_cast<FaceAnimal>(rand() % 10), static_cast<FaceBackground >(rand() % 10));
 
     //This constructor simply calls the other constructor with a random FaceAnimal and a random FaceBackground.
 
-}
+}*/
 
 string Card::operator()(int index)const{ //Overload of operator () in order to print out a row of the card as a string
     
