@@ -9,6 +9,7 @@ class Card;
 CardDeck* CardDeck::cardD = nullptr;
 
 CardDeck &CardDeck::make_CardDeck(){
+    
     if(cardD == nullptr){
         
         cardD = new CardDeck();

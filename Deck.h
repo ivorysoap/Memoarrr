@@ -10,6 +10,7 @@
 #include <iostream>
 #include <stack>
 #include "Card.h"
+#include "Reward.h"
 
 using namespace std;
 

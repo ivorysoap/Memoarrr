@@ -13,13 +13,23 @@ RewardDeck& RewardDeck::make_RewardDeck(){
     if(rewardD == nullptr){
         
         rewardD = new RewardDeck();
-        for(int i=0; i<5; i++){
-            for(int j=0; j<5; j++){
-               Reward *rewardPtr = new Reward(static_cast<FaceAnimal> (i),static_cast<FaceBackground> (j));
-               rewardD->deck.push(*rewardPtr);
+        for(int one=0; one<3; one++){
+            Reward rOne(Rubies::ONE);
+            rewardD->deck.push(rOne);
             }
+        
+        for(int two=0; two<2; two++){
+            Reward rTwo(Rubies::TWO);
+            rewardD->deck.push(rTwo);
+            }
+        
+        Reward rThree (Rubies::THREE);
+        rewardD->deck.push(rThree);
+        
+        Reward rFour (Rubies::FOUR);
+        rewardD->deck.push(rFour);
         }
-    }
+    
     return *rewardD;
 }
 

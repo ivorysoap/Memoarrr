@@ -13,6 +13,7 @@
 class RewardDeck : public Deck<Reward> {
     
     static RewardDeck* rewardD;
+    RewardDeck(){}
     
 public:
     static RewardDeck& make_RewardDeck();
