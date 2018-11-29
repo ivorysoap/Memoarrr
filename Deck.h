@@ -19,20 +19,19 @@ using namespace std;
 template <class T> //template to pick class type Card or Reward
 class Deck{
 
-    protected: vector<T> deck;
-
-    //Deck(int numItems=52); I'm not sure we need a constructor
-    
-public:
-
-    void shuffle() {shuffle(deck.begin(), deck.end());}
-
+protected: vector<T> deck;
+ 
+public: 
+    void shuffle() {random_shuffle(deck.begin(), deck.end());}
     bool isEmpty()const {vector<T>::empty();}
 
-    T* getNext(){
-
-        return nullptr;
-
+    T* getNext(){ 
+        T* next;
+        if (!(this->isEmpty())){
+            next = &deck.back();
+            return next;
+        }else
+        {return next = nullptr;}
     }
 
 };
