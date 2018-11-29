@@ -9,7 +9,6 @@
 #define CARD_H
 #include <iostream>
 
-
 using namespace std;
 
  enum class FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS};
@@ -36,8 +35,10 @@ public:
     string operator()(int) const;
     operator FaceAnimal()const {return this->enumFace;} //cast operator to FaceAnimal
     operator FaceBackground()const {return this->enumBack;} //cast operator to FaceBackground
-private: Card(FaceAnimal, FaceBackground);
     friend ostream& operator<<(ostream&, const Card&);
+    
+private: Card(FaceAnimal, FaceBackground);
+    
 };
 
 #endif /* CARD_H */

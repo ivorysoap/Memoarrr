@@ -15,19 +15,19 @@ RewardDeck& RewardDeck::make_RewardDeck(){
         rewardD = new RewardDeck();
         for(int one=0; one<3; one++){
             Reward rOne(Rubies::ONE);
-            rewardD->deck.push(rOne);
+            rewardD->deck.push_back(rOne);
             }
         
         for(int two=0; two<2; two++){
             Reward rTwo(Rubies::TWO);
-            rewardD->deck.push(rTwo);
+            rewardD->deck.push_back(rTwo);
             }
         
         Reward rThree (Rubies::THREE);
-        rewardD->deck.push(rThree);
+        rewardD->deck.push_back(rThree);
         
         Reward rFour (Rubies::FOUR);
-        rewardD->deck.push(rFour);
+        rewardD->deck.push_back(rFour);
         }
     
     return *rewardD;

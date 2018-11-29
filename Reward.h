@@ -22,8 +22,8 @@ class Reward{
 private: Reward(Rubies r): enumField(r){}; //private constructor
     
 public:
-    int getRubies(){return enumField;}
-    operator int()const {return this->enumField;} //cast operator to int
+    int getRubies(){return (int)enumField;}
+    operator int() {return this->getRubies();} //cast operator to int
    
 };
 

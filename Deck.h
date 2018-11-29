@@ -8,7 +8,9 @@
 #define DECK_H
 
 #include <iostream>
-#include <stack>
+#include <vector>
+#include <algorithm>
+#include <random>
 #include "Card.h"
 #include "Reward.h"
 
@@ -17,15 +19,15 @@ using namespace std;
 template <class T> //template to pick class type Card or Reward
 class Deck{
 
-    protected: stack<T> deck;
+    protected: vector<T> deck;
 
     //Deck(int numItems=52); I'm not sure we need a constructor
     
 public:
 
-    void shuffle();
+    void shuffle() {shuffle(deck.begin(), deck.end());}
 
-    bool isEmpty();
+    bool isEmpty()const {vector<T>::empty();}
 
     T* getNext(){
 
