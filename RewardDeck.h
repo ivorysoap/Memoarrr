@@ -17,6 +17,7 @@ class RewardDeck : public Deck<Reward> {
     
 public:
     static RewardDeck& make_RewardDeck();
+    void abstract() override{};
 };
 
 #endif /* REWARDDECK_H */

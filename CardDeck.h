@@ -10,16 +10,19 @@
 #define CARDDECK_H
 #include "Deck.h"
 #include <stack>
+#include <algorithm>
+#include <random>
 
 using namespace std;
 
 class CardDeck : public Deck<Card> {
     
     static CardDeck* cardD;
-    CardDeck();
+    CardDeck(){}
     
 public:
     static CardDeck& make_CardDeck();
+    void abstract()override {};
 };
 
 #endif /* CARDDECK_H */

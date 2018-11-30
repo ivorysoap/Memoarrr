@@ -20,14 +20,14 @@ class Deck{
 
 protected: vector<T> deck;
 protected: typename std::vector<T>::reverse_iterator rit;
-
-protected:Deck(){rit = deck.rbegin();}
+protected: Deck(){rit = deck.rbegin();}
  
 public: 
     void shuffle() {random_shuffle(deck.begin(), deck.end());}
     bool isEmpty()const {return vector<T>::empty();}
     T* getNext();
-
+    virtual void abstract() = 0;
+    
 };
 #endif /* DECK_H */
 
