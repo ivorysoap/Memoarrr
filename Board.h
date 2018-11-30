@@ -11,6 +11,8 @@ class Board {
 
     static const int ROWS = 5;
     static const int COLUMNS = 5;
+    static const int HOLE_ROW  = 3;
+    static const int HOLE_COLUMN = 3;
 
     CardDeck cd;
 
@@ -19,8 +21,8 @@ class Board {
 
 public:
 
-    enum Letter {A, B, C, D, E};
-    enum Number {ONE, TWO ,THREE, FOUR, FIVE};
+    enum Letter {A = 1, B, C, D, E};
+    enum Number {ONE = 1, TWO ,THREE, FOUR, FIVE};
 
     Board(); //Default constructor
 

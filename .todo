@@ -22,7 +22,7 @@
 
 ===GAME===
 
-- [ ] Issue: Game::getCard and Game::setCard , which are wrappers for Board::getCard and Board::setCard, were showing errors unless I made Board::getCard and Board::setCard static methods.  (Don't think it makes a difference since Board should never be instantiated more than once)
+- [x] Issue: Game::getCard and Game::setCard , which are wrappers for Board::getCard and Board::setCard, were showing errors unless I made Board::getCard and Board::setCard static methods.  (Don't think it makes a difference since Board should never be instantiated more than once)
 
 ===RULES===
 
