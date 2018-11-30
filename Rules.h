@@ -13,9 +13,11 @@
 class Rules{
     
 public:
+    //the following bool methods are suposed to have a const argument Game. Removed for now
     bool isValid( Game&);
     bool gameOver(Game&);
     bool roundOver( Game&);
+    const Player& getNextPlayer(const Game& );
 };
 
 #endif /* RULES_H */

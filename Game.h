@@ -36,6 +36,8 @@ public:
     Card* getCard(const Board::Letter&, const Board::Number&);
 
     void setCard(const Board::Letter&, const Board::Number&, Card*);
+    
+    friend ostream& operator<<(ostream&, const Rules&);
 
 };
 
