@@ -17,7 +17,7 @@ private:
 
 public:
     
-    Game(Board& bd){board = &bd;}
+    Game(Board* bd){board = bd;}
 
     int getRound();
 

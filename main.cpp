@@ -30,10 +30,10 @@ int main() {
         std::cin >> inputNbPlayers;
     }
     
-    Board bd();
+    Board* bd = new Board();
     Game myGame(bd); 
     RewardDeck rewardD();
-    rewardD.make_RewardDeck();
+    rewardD = rewardD.make_RewardDeck();
     
     //Setting player names
     for(inputNbPlayers; inputNbPlayers<0; inputNbPlayers--){
