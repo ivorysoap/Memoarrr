@@ -39,6 +39,7 @@ Player& Game::getPlayer(const Player::Side &side){
     for(Player p : players)
         if(p.enumField == side)
             return p;
+
 }
 
 const Card* Game::getPreviousCard(){
@@ -57,12 +58,14 @@ void Game::setCurrentCard(const Card *card){
 
 Card* Game::getCard(const Board::Letter &letter, const Board::Number &number){
 
-    return Board::getCard(letter, number);
+    return board.getCard(letter, number);
+
 }
 
 void Game::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
 
-    Board::setCard(letter, number, card);
+    board.setCard(letter, number, card);
+    
 }
 
 

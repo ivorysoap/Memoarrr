@@ -11,7 +11,8 @@ private:
 
     static Board board;
     int round;
-    Card currentCard = nullptr, previousCard = nullptr;
+    Card currentCard;
+    Card previousCard;
     vector<Player> players;
 
 public:
