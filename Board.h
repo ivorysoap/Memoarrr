@@ -1,7 +1,3 @@
-//
-// Created by Ivor on 2018-11-09.
-//
-
 #ifndef MEMOARRR_BOARD_H
 #define MEMOARRR_BOARD_H
 
@@ -21,15 +17,15 @@ class Board {
 
     Deck<Card> cardDeck;
 
-    //2D vector. Holds a vector of five rows, each of which holds five <Card,bool> tuples.  The bool represents the facing-up status of the card.
-    static vector< vector<pair<Card*,bool>> > board;
+    //2D vector. Holds a vector of five rows, each of which holds five pointers to Cards.
+    static vector< vector<Card*> > board;
 
 public:
 
     enum Letter {A, B, C, D, E};
     enum Number {ONE, TWO ,THREE, FOUR, FIVE};
 
-    Board();
+    Board(); //Default constructor
 
     bool isFaceUp(const Letter&, const Number&);
 
