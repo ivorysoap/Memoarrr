@@ -21,11 +21,11 @@ public:
 
     int getRound();
 
-    void addPlayer(const Player& plyr);
+    void addPlayer(const Player& player);
 
     Player& getPlayer(const Player::Side&);
     
-    vector<Player>& getPlayersVect(){return players;}
+    vector<Player>& getPlayersVect(){ return this->players; }
 
     const Card* getPreviousCard();
 

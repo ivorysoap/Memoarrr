@@ -53,7 +53,7 @@ const Card* Game::getPreviousCard(){
 const Card* Game::getCurrentCard(){
 
     return currentCard;
-    
+
 }
 
 void Game::setCurrentCard(Card *card){

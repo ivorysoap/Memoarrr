@@ -48,7 +48,14 @@ int main() {
         //stackPlayers.pop();
         cin.clear();
         std::cin.ignore(256,'\n');
+
     }
+
+    vector<Player>& playerVect = myGame.getPlayersVect();
+    iterator i;
+
+    cout << bd; //Displaying game
+    
     
     
     
