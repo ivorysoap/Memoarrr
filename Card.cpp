@@ -35,14 +35,6 @@ Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b){
     }
 }
 
-/*Card::Card(){
-
-    Card(static_cast<FaceAnimal>(rand() % 10), static_cast<FaceBackground >(rand() % 10));
-
-    //This constructor simply calls the other constructor with a random FaceAnimal and a random FaceBackground.
-
-}*/
-
 string Card::operator()(int index)const{ //Overload of operator () in order to print out a row of the card as a string
     
     string rowString;
