@@ -11,8 +11,8 @@ private:
 
     static Board* board;
     int round;
-    Card* currentCard;
-    Card* previousCard;
+    Card* currentCard = nullptr;
+    Card* previousCard = nullptr;
     vector<Player> players;
 
 public:

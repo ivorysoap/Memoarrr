@@ -44,12 +44,14 @@ Player& Game::getPlayer(const Player::Side &side){
 
 const Card* Game::getPreviousCard(){
 
-    //Unimplemented
+    return previousCard;
 
 }
 
 const Card* Game::getCurrentCard(){
+
     return currentCard;
+    
 }
 
 void Game::setCurrentCard(Card *card){
