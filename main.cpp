@@ -15,7 +15,7 @@ int main() {
     //instance varibles
     int inputNbPlayers;
     string inputPlayerName;
-    stack<Player> stackPlayers;
+    //stack<Player> stackPlayers;
     
     cout << "****Welcome to Memoarrr!!!****" << endl << endl;
     
@@ -32,8 +32,8 @@ int main() {
     
     Board* bd = new Board();
     Game myGame(bd); 
-    RewardDeck rewardD();
-    rewardD = &(rewardD->make_RewardDeck())
+    RewardDeck rewardD;
+    rewardD.make_RewardDeck();
     
     //Setting player names
     for(inputNbPlayers; inputNbPlayers<0; inputNbPlayers--){
@@ -42,11 +42,12 @@ int main() {
         cout << "Enter name of player " << ++tempCtr << endl;
         cin >>inputPlayerName;
         
-        stackPlayers.push(new Player(inputPlayerName));
-        myGame.addPlayer(stackPlayers.top());
-        stackPlayers.pop();
-        inputNbPlayers--;
+        Player* newPlayer = new Player(inputPlayerName);
+        //stackPlayers.push(*newPlayer);
+        myGame.addPlayer(*newPlayer);
+        //stackPlayers.pop();
         cin.clear();
+        std::cin.ignore(256,'\n');
     }
     
     
