@@ -9,6 +9,7 @@
 #define PLAYER_H
 #include <iostream>
 #include "Reward.h"
+#include "Rules.h"
 
 using namespace std;
 
@@ -17,19 +18,19 @@ class Player{
     string name;
     int rubies = 0;
     bool active;
+    //bool endOfGame;
       
 public:
     enum Side {TOP = 1, BOTTOM, LEFT, RIGHT} enumField;
     static int player_count; //keeps the number of players and thus assign the player side when player object is created
-   
     Player(const string _name);
-    
+    //bool getEndOfGame(){return endOfGame;}
     string getName() const {return name;}
     void setActive(bool) {active = true;}
     bool isActive() const {return active;}
     int getNRubies() const {return rubies;}
     void addReward(const Reward&);
-    void setDisplayMode(bool endOfGame); //???
+    //void setDisplayMode(Rules& myRules);
     Side getSide() { return this->enumField;}
     
    // void setSide(Side); For now I don't think we need this method.
