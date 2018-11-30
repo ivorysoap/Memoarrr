@@ -51,10 +51,7 @@ int main() {
 
     }
 
-    vector<Player>& playerVect = myGame.getPlayersVect();
-    iterator i;
-
-    cout << bd; //Displaying game
+    cout << myGame; //displaying game
     
     
     
