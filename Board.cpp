@@ -7,10 +7,12 @@ using namespace std;
 
 Board::Board(){
 
+    //Card now also contains bool faceUp or Down
+    
     for(int i = 0; i < ROWS; i++){
         vector<pair<Card*,bool>> row;
         for(int j = 0; j < COLUMNS; j++){
-            row.push_back(make_pair(cardDeck.getNext(), false));  //This needs fixing.  Maybe don't use a CardDeck since its getNext() method is private?
+            row.push_back(make_pair(cardDeck.getNext(), false));  //This needs fixing. Maybe don't use a CardDeck since its getNext() method is private?
         }
         board.push_back(row);
     }

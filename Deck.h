@@ -6,7 +6,6 @@
  */
 #ifndef DECK_H
 #define DECK_H
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -28,6 +27,8 @@ public:
     T* getNext(){ 
         T* next;
         if (!(this->isEmpty())){
+            
+            
             next = &deck.back();
             return next;
         }else
