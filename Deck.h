@@ -19,15 +19,14 @@ template <class T> //template to pick class type Card or Reward
 class Deck{
 
 protected: vector<T> deck;
-protected: vector<T>::reverse_iterator rit;
+protected: typename std::vector<T>::reverse_iterator rit;
 
 private:Deck(){rit = deck.rbegin();}
  
 public: 
     void shuffle() {random_shuffle(deck.begin(), deck.end());}
     bool isEmpty()const {return vector<T>::empty();}
-
-    T* getNext(){}
+    T* getNext();
 
 };
 #endif /* DECK_H */
