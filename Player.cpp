@@ -17,8 +17,8 @@ Player::Player(const string& _name): name(_name){
     }
 }
 
-Player::addReward(const Reward& _reward){
-    rubies = rubies + _reward.enumField;
+void Player::addReward(const Reward & _reward){
+    rubies = rubies + _reward.getRubies();
 }
 
 ostream& operator<<(ostream& os, const Player& pl){ //to be implemented
