@@ -37,6 +37,8 @@ public:
 
     void setCard(const Board::Letter&, const Board::Number&, Card*);
     
+    Board& getBoard(){return *board;}
+    
     friend ostream& operator<<(ostream&, const Game&);
 
 };

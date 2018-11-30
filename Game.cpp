@@ -35,11 +35,13 @@ void Game::addPlayer(const Player &player){
  * @return p the Player sitting on the specified Side
  */
 Player& Game::getPlayer(const Player::Side &side){
-
-    for(Player p : players)
-        if(p.enumField == side)
-            return p;
-
+    
+    int ctr(0);
+    for(Player p : players){
+        if(p.enumField = side) break;
+        ctr++;
+    }
+    return players.at(ctr);
 }
 
 const Card* Game::getPreviousCard(){
@@ -72,6 +74,17 @@ void Game::setCard(const Board::Letter &letter, const Board::Number &number, Car
 
     board->setCard(letter, number, card);
 
+}
+
+ostream& operator<<(ostream& os,Game& myGame){ //to be implemented
+    os << "Players:" << endl;
+    for(Player p: myGame.getPlayersVect()){
+        os << p <<endl;
+    }
+    
+    os << "Board"<< endl;
+    os << myGame.getBoard() << endl;
+    return os;
 }
 
 
