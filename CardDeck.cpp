@@ -19,7 +19,7 @@ CardDeck &CardDeck::make_CardDeck(){
                cardD->deck.push_back(*cardPtr);
             }
         }
-        //cardD->shuffle(); needs fixing
+        //cardD->shuffle(); //needs fixing
     }
     return *cardD;
 }

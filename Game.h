@@ -24,6 +24,8 @@ public:
     void addPlayer(const Player& plyr);
 
     Player& getPlayer(const Player::Side&);
+    
+    vector<Player>& getPlayersVect(){return players;}
 
     const Card* getPreviousCard();
 

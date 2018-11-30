@@ -14,5 +14,10 @@ bool Rules:: gameOver(Game& myGame){
     if(myGame.getRound() > 6) return true;
 }
 bool Rules:: roundOver(Game& myGame){
-    
+    int flag(0);
+    for(Player p: myGame.getPlayersVect()){
+        if(p.isActive()) flag++; 
+    }
+    if(flag>1) return false;
+    else return true;
 }
