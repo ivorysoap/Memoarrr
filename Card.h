@@ -29,7 +29,7 @@ class Card{
 public:
     void turnFaceUp(){isTurnedUp = false;}
     void turnFaceDown(){isTurnedUp = true;}
-    bool getIsTurnedUp() {return isTurnedUp;}
+    bool getIsTurnedUp() const{return isTurnedUp;}
     const int getNRows(){ return ROWS;}
     //string* getCardUncovered(){return cardUncovered;}
     void print()const;
