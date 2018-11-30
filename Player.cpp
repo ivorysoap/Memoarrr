@@ -6,7 +6,7 @@ using namespace std;
 
 int Player::player_count = 0;
 
-Player::Player(const string& _name): name(_name){
+Player::Player(const string _name): name(_name){
     
     player_count++;
     switch(player_count){

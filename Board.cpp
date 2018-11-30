@@ -6,6 +6,8 @@
 using namespace std;
 
 Board::Board(){
+    
+    cd.make_CardDeck();
 
     for(int i = 0; i < ROWS; i++){
         vector<Card*> row;

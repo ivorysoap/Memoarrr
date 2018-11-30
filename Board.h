@@ -15,7 +15,7 @@ class Board {
     const int FACE_UP = 1;
     const int FACE_DOWN = 0;
 
-    CardDeck cd = cd.make_CardDeck();
+    CardDeck cd;
 
     //2D vector. Holds a vector of five rows, each of which holds five pointers to Cards.
     static vector< vector<Card*> > board;

@@ -27,9 +27,11 @@ int main() {
         std::cin >> inputNbPlayers;
     }
     
-    Game memoarrr();
+    Board bd();
+    Game memoarrr(bd); 
     
-    while(inputNbPlayers){
+    for(inputNbPlayers; inputNbPlayers<0; inputNbPlayers--){
+        
         int tempCtr(0);
         cout << "Enter name of player " << ++tempCtr << endl;
         cin >>inputPlayerName;

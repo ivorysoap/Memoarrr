@@ -9,13 +9,15 @@
 class Game {
 private:
 
-    static Board board;
+    static Board& board;
     int round;
     Card* currentCard;
     Card* previousCard;
     vector<Player> players;
 
 public:
+    
+    Game(Board& bd){board = bd;}
 
     int getRound();
 
