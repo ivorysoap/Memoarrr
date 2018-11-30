@@ -16,12 +16,21 @@ Board::Board(){
     
     cd.make_CardDeck();
 
-    for(int i = 0; i < ROWS; i++){
+    for(int i = 1; i <= ROWS; i++){
         vector<Card*> row;
-        for(int j = 0; j < COLUMNS; j++){
+        for(int j = 1; j <= COLUMNS; j++){
 
-            //Filling each of the 5 rows with 5 cards, leaving a hole in the centre.
-            (i == 2 && j == 2) ? row.push_back(nullptr) : row.push_back(cd.getNext());
+            if(i == HOLE_ROW && j == HOLE_COLUMN){
+                row.push_back(nullptr); //Case for empty hole in middle of board
+            }
+            else {
+                //Get a card from cd and check to see if it is valid.  If a nullptr is obtained, it means cd is empty.  Throw an exception.
+                Card* distributedCard = cd.getNext();
+                if(distributedCard == nullptr)
+                    throw no_more_cards();
+                else
+                    row.push_back(distributedCard);
+            }
 
         }
         board.push_back(row); //Adding the 5 rows to the board vector.
@@ -104,5 +113,6 @@ ostream& operator<<(ostream& os, const Board& b){
         }
     }
     return os;
+
 }
 
