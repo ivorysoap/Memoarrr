@@ -1,6 +1,19 @@
+#include "Player.h"
+#include "Card.h"
+#include "Reward.h"
+#include "Deck.h"
+#include "CardDeck.h"
+#include "RewardDeck.h"
+#include "Board.h"
+#include "Game.h"
+#include "Rules.h"
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    
+    cout << "Welcome to Memoarrr!!!" << endl;
+    
+    
     return 0;
 }
