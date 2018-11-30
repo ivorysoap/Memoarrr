@@ -48,11 +48,11 @@ const Card* Game::getPreviousCard(){
 
 }
 
-void Game::setCurrentCard(const Card *card){
+void Game::setCurrentCard(Card *card){
 
     previousCard = currentCard;
 
-    currentCard = *card;
+    currentCard = card;
 
 }
 
@@ -65,7 +65,7 @@ Card* Game::getCard(const Board::Letter &letter, const Board::Number &number){
 void Game::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
 
     board.setCard(letter, number, card);
-    
+
 }
 
 

@@ -11,8 +11,8 @@ private:
 
     static Board board;
     int round;
-    Card currentCard;
-    Card previousCard;
+    Card* currentCard;
+    Card* previousCard;
     vector<Player> players;
 
 public:
@@ -27,7 +27,7 @@ public:
 
     const Card* getCurrentCard();
 
-    void setCurrentCard(const Card*);
+    void setCurrentCard(Card*);
 
     Card* getCard(const Board::Letter&, const Board::Number&);
 
