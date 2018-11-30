@@ -70,9 +70,5 @@ void Board::reset(){
 
 }
 
-void Board::toString(){
 
-    //Unimplemented
-
-}
 

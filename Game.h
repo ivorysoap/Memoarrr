@@ -10,11 +10,8 @@ class Game {
 private:
 
     static Board board;
-
     int round;
-
     Card currentCard = nullptr, previousCard = nullptr;
-
     vector<Player> players;
 
 public:
@@ -34,8 +31,6 @@ public:
     Card* getCard(){const Board::Letter&, const Board::Number&};
 
     void setCard(const Board::Letter&, const Board::Number&, Card*);
-
-    void toString();
 
 };
 

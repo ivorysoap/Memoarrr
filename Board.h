@@ -39,7 +39,7 @@ public:
 
     void reset();
 
-    void toString(); 
+    friend ostream& operator<<(ostream&, const Card&);
 
     //Getters, Setters below
 
