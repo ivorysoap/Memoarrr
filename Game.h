@@ -9,7 +9,7 @@
 class Game {
 private:
 
-    static Board& board;
+    static Board* board;
     int round;
     Card* currentCard;
     Card* previousCard;
@@ -17,7 +17,7 @@ private:
 
 public:
     
-    Game(Board& bd){board = bd;}
+    Game(Board& bd){board = &bd;}
 
     int getRound();
 
