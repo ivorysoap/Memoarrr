@@ -37,7 +37,7 @@ public:
 
     void setCard(const Board::Letter&, const Board::Number&, Card*);
     
-    friend ostream& operator<<(ostream&, const Rules&);
+    friend ostream& operator<<(ostream&, const Game&);
 
 };
 
