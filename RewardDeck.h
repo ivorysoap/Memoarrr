@@ -13,7 +13,7 @@
 class RewardDeck : public Deck<Reward> {
     
     static RewardDeck* rewardD;
-    RewardDeck(){}
+    RewardDeck();
     
 public:
     static RewardDeck& make_RewardDeck();
