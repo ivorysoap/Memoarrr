@@ -10,8 +10,10 @@ Board::Board(){
     for(int i = 0; i < ROWS; i++){
         vector<Card*> row;
         for(int j = 0; j < COLUMNS; j++){
-            row.push_back(cd.getNext());  //Filling each of the 5 rows with 5 cards
-            //TODO: Leave a space in the middle of the board.
+
+            //Filling each of the 5 rows with 5 cards, leaving a hole in the centre.
+            (i == 2 && j == 2) ? row.push_back(nullptr) : row.push_back(cd.getNext());
+
         }
         board.push_back(row); //Adding the 5 rows to the board vector.
     }
