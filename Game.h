@@ -28,7 +28,7 @@ public:
 
     void setCurrentCard(const Card*);
 
-    Card* getCard(){const Board::Letter&, const Board::Number&};
+    Card* getCard(const Board::Letter&, const Board::Number&);
 
     void setCard(const Board::Letter&, const Board::Number&, Card*);
 

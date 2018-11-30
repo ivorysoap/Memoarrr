@@ -7,12 +7,10 @@ using namespace std;
 
 Board::Board(){
 
-    //Card now also contains bool faceUp or Down
-    
     for(int i = 0; i < ROWS; i++){
         vector<Card*> row;
         for(int j = 0; j < COLUMNS; j++){
-            row.push_back(cardDeck.getNext());  //Filling each of the 5 rows with 5 cards
+            row.push_back(cd.getNext());  //Filling each of the 5 rows with 5 cards
             //TODO: Leave a space in the middle of the board.
         }
         board.push_back(row); //Adding the 5 rows to the board vector.
@@ -50,13 +48,13 @@ bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &numbe
     }
 }
 
-static Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
+Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
 
-    return *(board[letter][number]);
+    return board[letter][number];
 
 }
 
-static void Board::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
+void Board::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
 
     board[letter][number] = card;
 

@@ -15,7 +15,7 @@ class Board {
     const int FACE_UP = 1;
     const int FACE_DOWN = 0;
 
-    Deck<Card> cardDeck;
+    CardDeck cd = cd.make_CardDeck();
 
     //2D vector. Holds a vector of five rows, each of which holds five pointers to Cards.
     static vector< vector<Card*> > board;
@@ -33,17 +33,13 @@ public:
 
     bool turnFaceDown(const Letter&, const Number&);
 
-    static Card* getCard(const Letter&, const Number&);  //Not sure why this method is static
+    Card* getCard(const Letter&, const Number&);  //Not sure why this method is static
 
-    static void setCard(const Letter&, const Number&, Card*);  //Nor this one.  See .todo for more details
+    void setCard(const Letter&, const Number&, Card*);  //Nor this one.  See .todo for more details
 
     void reset();
 
     friend ostream& operator<<(ostream&, const Card&);
-
-    //Getters, Setters below
-
-    Card getNext(){ cardDeck.getNext(); }
 
 };
 
