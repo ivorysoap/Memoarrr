@@ -16,7 +16,7 @@ using namespace std;
 class CardDeck : public Deck<Card> {
     
     static CardDeck* cardD;
-    CardDeck(){}
+    CardDeck();
     
 public:
     static CardDeck& make_CardDeck();

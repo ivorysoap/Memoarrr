@@ -21,7 +21,7 @@ public:
 
     int getRound();
 
-    void addPlayer(const Player&);
+    void addPlayer(const Player& plyr);
 
     Player& getPlayer(const Player::Side&);
 
