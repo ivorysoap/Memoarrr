@@ -27,7 +27,16 @@ int main() {
         std::cin >> inputNbPlayers;
     }
     
+    Game memoarrr();
     
+    while(inputNbPlayers){
+        int tempCtr(0);
+        cout << "Enter name of player " << ++tempCtr << endl;
+        cin >>inputPlayerName;
+        
+    
+        inputNbPlayers--;
+    }
     
     
     
