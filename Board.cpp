@@ -21,13 +21,13 @@ Board::Board(){
 
 bool Board::isFaceUp(const Board::Letter &letter, const Board::Number &number){
 
-    return board[letter][number]->isTurnedUp(); //returns the isTurnedUp value belonging to the Card in question
+    return board[letter][number]->getIsTurnedUp(); //returns the isTurnedUp value belonging to the Card in question
 
 }
 
 bool Board::turnFaceUp(const Board::Letter &letter, const Board::Number &number){
 
-    if(!board[letter][number]->isTurnedUp()){
+    if(!board[letter][number]->getIsTurnedUp()){
 
         board[letter][number]->turnFaceUp();
         return true;
@@ -40,7 +40,7 @@ bool Board::turnFaceUp(const Board::Letter &letter, const Board::Number &number)
 
 bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &number){
 
-    if(board[letter][number]->isTurnedUp()){
+    if(board[letter][number]->getIsTurnedUp()){
 
         board[letter][number]->turnFaceDown();
         return true;
