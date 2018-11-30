@@ -36,7 +36,6 @@ bool Board::turnFaceUp(const Board::Letter &letter, const Board::Number &number)
     else{
         return false;
     }
-
 }
 
 bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &number){
@@ -45,12 +44,10 @@ bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &numbe
 
         board[letter][number]->turnFaceDown();
         return true;
-
     }
     else{
         return false;
     }
-
 }
 
 static Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
