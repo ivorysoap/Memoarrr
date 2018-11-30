@@ -9,11 +9,8 @@
 
 class Board {
 
-    const int ROWS = 5;
-    const int COLUMNS = 5;
-
-    const int FACE_UP = 1;
-    const int FACE_DOWN = 0;
+    static const int ROWS = 5;
+    static const int COLUMNS = 5;
 
     CardDeck cd;
 
