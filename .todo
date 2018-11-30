@@ -12,7 +12,7 @@
 
 - [ ] Implement Deck and CardDeck methods
 
-===BOARD===
+===BOARD✔===
 
 - [ ] Fix Board() constructor to leave a blank space in the middle
 - [ ] Add exception (OutOfRange) for all methods
