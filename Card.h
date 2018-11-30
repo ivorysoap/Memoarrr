@@ -29,6 +29,7 @@ class Card{
 public:
     void turnFaceUp(){isTurnedUp = false;}
     void turnFaceDown(){isTurnedUp = true;}
+    bool isTurnedUp() {return isTurnedUp;}
     const int getNRows(){ return ROWS;}
     //string* getCardUncovered(){return cardUncovered;}
     void print()const;
@@ -36,9 +37,9 @@ public:
     operator FaceAnimal()const {return this->enumFace;} //cast operator to FaceAnimal
     operator FaceBackground()const {return this->enumBack;} //cast operator to FaceBackground
     friend ostream& operator<<(ostream&, const Card&);
-    
+
 private: Card(FaceAnimal, FaceBackground);
-    
+
 };
 
 #endif /* CARD_H */

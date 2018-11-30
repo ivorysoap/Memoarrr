@@ -10,25 +10,26 @@ Board::Board(){
     //Card now also contains bool faceUp or Down
     
     for(int i = 0; i < ROWS; i++){
-        vector<pair<Card*,bool>> row;
+        vector<Card*> row;
         for(int j = 0; j < COLUMNS; j++){
-            row.push_back(make_pair(cardDeck.getNext(), false));  //This needs fixing. Maybe don't use a CardDeck since its getNext() method is private?
+            row.push_back(cardDeck.getNext());  //Filling each of the 5 rows with 5 cards
+            //TODO: Leave a space in the middle of the board.
         }
-        board.push_back(row);
+        board.push_back(row); //Adding the 5 rows to the board vector.
     }
 }
 
 bool Board::isFaceUp(const Board::Letter &letter, const Board::Number &number){
 
-    return get<1>(board[letter][number]); //returns the bool (second part of the tuple) of the Card in question
+    return board[letter][number]->isTurnedUp(); //returns the isTurnedUp value belonging to the Card in question
 
 }
 
 bool Board::turnFaceUp(const Board::Letter &letter, const Board::Number &number){
 
-    if(get<1>(board[letter][number]) == FACE_DOWN){
+    if(!board[letter][number]->isTurnedUp()){
 
-        get<1>(board[letter][number]) == FACE_UP;
+        board[letter][number]->turnFaceUp();
         return true;
 
     }
@@ -40,9 +41,9 @@ bool Board::turnFaceUp(const Board::Letter &letter, const Board::Number &number)
 
 bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &number){
 
-    if(get<1>(board[letter][number]) == FACE_UP){
+    if(board[letter][number]->isTurnedUp()){
 
-        get<1>(board[letter][number]) == FACE_DOWN;
+        board[letter][number]->turnFaceDown();
         return true;
 
     }
@@ -54,13 +55,13 @@ bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &numbe
 
 static Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
 
-    return *get<0>(board[letter][number]);
+    return *(board[letter][number]);
 
 }
 
 static void Board::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
 
-    get<0>(board[letter][number]) = card;
+    board[letter][number] = card;
 
 }
 
@@ -68,10 +69,7 @@ void Board::reset(){
 
     for(int i = 0; i < ROWS; i++)
         for(int j = 0; j < COLUMNS; j++)
-            get<1>(board[i][j]) = FACE_DOWN;
-
-    //This would be much cleaner if we could call turnFaceDown() for each element instead.
-
+            board[i][j]->turnFaceDown();
 
 }
 

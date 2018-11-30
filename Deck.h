@@ -22,7 +22,7 @@ protected: vector<T> deck;
  
 public: 
     void shuffle() {random_shuffle(deck.begin(), deck.end());}
-    bool isEmpty()const {vector<T>::empty();}
+    bool isEmpty()const {return vector<T>::empty();}
 
     T* getNext(){ 
         T* next;
