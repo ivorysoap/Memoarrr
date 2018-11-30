@@ -65,8 +65,8 @@ void Board::reset(){
     for(int i = 0; i < ROWS; i++)
         for(int j = 0; j < COLUMNS; j++)
             board[i][j]->turnFaceDown();
-
 }
+ostream& operator<<(ostream& os, const Board& b){
 
-
-
+    
+}

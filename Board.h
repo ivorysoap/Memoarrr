@@ -39,7 +39,7 @@ public:
 
     void reset();
 
-    friend ostream& operator<<(ostream&, const Card&);
+    friend ostream& operator<<(ostream&, const Board&);
 
 };
 
