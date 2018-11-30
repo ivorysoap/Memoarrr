@@ -31,6 +31,8 @@ public:
     void turnFaceDown(){isTurnedUp = true;}
     bool getIsTurnedUp() const{return isTurnedUp;}
     const int getNRows(){ return ROWS;}
+    FaceAnimal getFace()const {return this->enumFace;}
+    FaceBackground getBack()const {return this->enumBack;}
     //string* getCardUncovered(){return cardUncovered;}
     void print()const;
     string operator()(int) const;

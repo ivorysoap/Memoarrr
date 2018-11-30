@@ -8,13 +8,14 @@
 
 #ifndef RULES_H
 #define RULES_H
+#include "Game.h"
 
 class Rules{
     
 public:
-    bool isValid(const Game&);
-    bool gameOver(const Game&);
-    bool roundOver(const Game&);
+    bool isValid( Game&);
+    bool gameOver(Game&);
+    bool roundOver( Game&);
 };
 
 #endif /* RULES_H */
