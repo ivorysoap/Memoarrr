@@ -14,8 +14,6 @@ struct no_more_cards : public exception {
 
 Board::Board(){
     
-    cd.make_CardDeck();
-
     for(int i = 1; i <= ROWS; i++){
         vector<Card*> row;
         for(int j = 1; j <= COLUMNS; j++){
@@ -25,7 +23,7 @@ Board::Board(){
             }
             else {
                 //Get a card from cd and check to see if it is valid.  If a nullptr is obtained, it means cd is empty.  Throw an exception.
-                Card* distributedCard = cd.getNext();
+                Card* distributedCard = CardDeck::cardD->getNext();
                 if(distributedCard == nullptr)
                     throw no_more_cards();
                 else
@@ -37,26 +35,25 @@ Board::Board(){
     }
 }
 
-bool Board::isFaceUp(const Board::Letter &letter, const Board::Number &number){
+bool Board::isFaceUp(const Letter &letter, const Number &number){
 
     return board[letter][number]->getIsTurnedUp(); //returns the isTurnedUp value belonging to the Card in question
 
 }
 
-bool Board::turnFaceUp(const Board::Letter &letter, const Board::Number &number){
+bool Board::turnFaceUp(const Letter &letter, const Number &number){
 
     if(!board[letter][number]->getIsTurnedUp()){
 
         board[letter][number]->turnFaceUp();
         return true;
-
     }
     else{
         return false;
     }
 }
 
-bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &number){
+bool Board::turnFaceDown(const Letter &letter, const Number &number){
 
     if(board[letter][number]->getIsTurnedUp()){
 
@@ -66,10 +63,9 @@ bool Board::turnFaceDown(const Board::Letter &letter, const Board::Number &numbe
     else{
         return false;
     }
-
 }
 
-Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
+Card* Board::getCard(const Letter &letter, const Number &number){
 
     if(letter >= 1
        && letter <= ROWS
@@ -83,7 +79,7 @@ Card* Board::getCard(const Board::Letter &letter, const Board::Number &number){
 
 }
 
-void Board::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
+void Board::setCard(const Letter &letter, const Number &number, Card *card){
 
     if(letter >= 1
        && letter <= ROWS
@@ -105,14 +101,14 @@ void Board::reset(){
 
 }
 
-ostream& operator<<(ostream& os, const Board& b){
-
-    for(int i=0; i < 5; i++){
-        for(int j=0; j< 5; j++){
-            os << *(b.board.at(i).at(j)) << endl;
-        }
-    }
-    return os;
-
-}
+//ostream& operator<<(ostream& os, const Board& b){
+//
+//    for(int i=0; i < 5; i++){
+//        for(int j=0; j< 5; j++){
+//            os << *(b.board.at(i).at(j)) << endl;
+//        }
+//    }
+//    return os;
+//
+//}
 

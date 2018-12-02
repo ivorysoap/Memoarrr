@@ -9,15 +9,16 @@
 #ifndef RULES_H
 #define RULES_H
 #include "Game.h"
+#include "Player.h"
 
 class Rules{
-    protected: typename std::vector<Player>::iterator it;
+   protected: typename std::vector<Player>::iterator it;
 public:
     //the following bool methods are suposed to have a const argument Game. Removed for now
-    bool isValid( Game&);
+    bool isValid(Game&);
     bool gameOver(Game&);
-    bool roundOver( Game&);
-    const Player& getNextPlayer( Game& );
+    bool roundOver(Game&);
+    const Player& getNextPlayer(Game&);
 };
 
 #endif /* RULES_H */

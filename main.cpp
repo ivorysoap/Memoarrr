@@ -9,6 +9,7 @@
 #include "Rules.h"
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
 int main() {
@@ -23,23 +24,22 @@ int main() {
     cin >> inputNbPlayers;
     
     //setting the number of players
-    while ((inputNbPlayers < 2) && (inputNbPlayers > 4)) {
+    while ((inputNbPlayers < 2) || (inputNbPlayers > 4)) {
         std::cout << "Invalid input! Please enter a digital value between 2 and 4 to select number of players" << std::endl;
         std::cin.clear();
         std::cin.ignore(256,'\n');
         std::cin >> inputNbPlayers;
     }
-    
+    CardDeck::cardD->make_CardDeck();
+    //CardDeck::cardD->shuffle();
+    RewardDeck::rewardD->make_RewardDeck();
     Board* bd = new Board();
     Game myGame(bd); 
-    RewardDeck rewardD;
-    rewardD.make_RewardDeck();
     
     //Setting player names
-    for(inputNbPlayers; inputNbPlayers<0; inputNbPlayers--){
+    for(int i=0; i<inputNbPlayers; i++){
         
-        int tempCtr(0);
-        cout << "Enter name of player " << ++tempCtr << endl;
+        cout << "Enter name of player " << i+1 << endl;
         cin >>inputPlayerName;
         
         Player* newPlayer = new Player(inputPlayerName);
@@ -48,14 +48,9 @@ int main() {
         //stackPlayers.pop();
         cin.clear();
         std::cin.ignore(256,'\n');
-
     }
-
-    cout << myGame; //displaying game
-    
-    
-    
-    
-    
+    //cout << bd;
+    //cout << myGame; //displaying game
+   
     return 0;
 }

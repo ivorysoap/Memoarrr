@@ -12,12 +12,13 @@
 
 class RewardDeck : public Deck<Reward> {
     
-    static RewardDeck* rewardD;
-    //RewardDeck():Deck(){}
+    RewardDeck();
+    void abstract() override{};
     
 public:
+    static RewardDeck* rewardD;
     static RewardDeck& make_RewardDeck();
-    void abstract() override{};
+    
 };
 
 #endif /* REWARDDECK_H */

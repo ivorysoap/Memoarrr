@@ -25,7 +25,6 @@ int Game::getRound(){
 void Game::addPlayer(const Player &player){
 
     players.push_back(player);
-
 }
 
 /**
@@ -66,26 +65,26 @@ void Game::setCurrentCard(Card *card){
 
 Card* Game::getCard(const Board::Letter &letter, const Board::Number &number){
 
-    return board->getCard(letter, number);
+    return myBoard->getCard(letter, number);
 
 }
 
 void Game::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
 
-    board->setCard(letter, number, card);
+    myBoard->setCard(letter, number, card);
 
 }
 
-ostream& operator<<(ostream& os,Game& myGame){ //to be implemented
-    os << "Players:" << endl;
-    for(Player p: myGame.getPlayersVect()){
-        os << p <<endl;
-    }
-    
-    os << "Board"<< endl;
-    os << myGame.getBoard() << endl;
-    return os;
-}
+//ostream& operator<<(ostream& os,Game& myGame){ //to be implemented
+//    os << "Players:" << endl;
+//    for(Player p: myGame.getPlayersVect()){
+//        os << p <<endl;
+//    }
+//    
+//    os << "Board"<< endl;
+//    os << myGame.getBoard() << endl;
+//    return os;
+//}
 
 
 

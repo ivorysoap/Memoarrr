@@ -1,7 +1,5 @@
 #ifndef MEMOARRR_GAME_H
 #define MEMOARRR_GAME_H
-
-
 #include "Player.h"
 #include "Card.h"
 #include "Board.h"
@@ -9,7 +7,7 @@
 class Game {
 private:
 
-    static Board* board;
+    Board* myBoard;
     int round;
     Card* currentCard = nullptr;
     Card* previousCard = nullptr;
@@ -17,7 +15,7 @@ private:
 
 public:
     
-    Game(Board* bd){board = bd;}
+    Game(Board* bd){myBoard = bd;}
 
     int getRound();
 
@@ -37,7 +35,7 @@ public:
 
     void setCard(const Board::Letter&, const Board::Number&, Card*);
     
-    Board& getBoard(){return *board;}
+    Board& getBoard(){return *myBoard;}
     
     friend ostream& operator<<(ostream&, const Game&);
 

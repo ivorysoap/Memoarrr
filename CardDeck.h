@@ -16,13 +16,13 @@
 using namespace std;
 
 class CardDeck : public Deck<Card> {
-    
-    static CardDeck* cardD;
-    //CardDeck(){}
+    CardDeck();
+    void abstract()override {};
     
 public:
+    static CardDeck* cardD;
     static CardDeck& make_CardDeck();
-    void abstract()override {};
+    
 };
 
 #endif /* CARDDECK_H */

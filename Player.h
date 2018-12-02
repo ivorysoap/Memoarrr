@@ -9,7 +9,7 @@
 #define PLAYER_H
 #include <iostream>
 #include "Reward.h"
-#include "Rules.h"
+
 
 using namespace std;
 
@@ -33,10 +33,9 @@ public:
     //void setDisplayMode(Rules& myRules);
     Side getSide() { return this->enumField;}
     
-   // void setSide(Side); For now I don't think we need this method.
     friend ostream& operator<<(ostream&, const Player&);
-
 };
+
 
 #endif /* PLAYER_H */
 

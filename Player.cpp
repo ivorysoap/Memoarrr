@@ -20,11 +20,10 @@ Player::Player(const string _name): name(_name){
 void Player::addReward(const Reward & _reward){
     rubies = rubies + _reward.getRubies();
 }
-
-ostream& operator<<(ostream& os, Player& pl){ //to be implemented
-    
-        os << pl.getName() << " :" << pl.getSide() << endl;
- 
-    return os;
-}
+//ostream& operator<<(ostream& os, Player& pl){
+//    
+//        os << pl.getName() << " :" << pl.getSide() << endl;
+// 
+//    return os;
+//}
 

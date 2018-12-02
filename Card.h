@@ -24,7 +24,7 @@ class Card{
     const static string cardUncovered[3];
     char cardDisp[ROWS][3]; //3x3 array to display the card
     char dispFace; char dispBack; // First letter of the Face and Background. Will be usefull to print the card
-   //Card(); //Blank constructor to initialize a random card.
+
    
 public:
     void turnFaceUp(){isTurnedUp = false;}

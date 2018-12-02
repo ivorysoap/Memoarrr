@@ -27,7 +27,7 @@ Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b){
     }
     
     for(int i = 0; i<3; i++){       //Loop to fill the 3x3 array cardDisp
-        for(int j = 0; i<3; j++){
+        for(int j = 0; j<3; j++){
             if((i==1) && (j==1)) cardDisp[i][j] = dispFace;
             else
             cardDisp[i][j] = dispBack;
