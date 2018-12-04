@@ -23,10 +23,11 @@ bool Rules:: roundOver(Game& myGame){
 }
 
  const Player& Rules::getNextPlayer(Game& myGame){
-     if(it.operator ->()==nullptr){
+     
+     if(ptr==nullptr){
         it = myGame.getPlayersVect().begin();
      }
      ++it;
-     
-     return *it;
+     ptr = &(*it); 
+     return *ptr;
  }

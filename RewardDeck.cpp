@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Reward.h"
 
-
 using namespace std;
 
 class Reward;

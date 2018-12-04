@@ -11,10 +11,13 @@
 #include "Game.h"
 #include "Player.h"
 
+
 class Rules{
-   protected: typename std::vector<Player>::iterator it;
+protected: typename std::vector<Player>::iterator it;
+protected: Player *ptr;
+
 public:
-    //the following bool methods are suposed to have a const argument Game. Removed for now
+    //the following bool methods are supposed to have a const argument Game. Removed for now
     bool isValid(Game&);
     bool gameOver(Game&);
     bool roundOver(Game&);

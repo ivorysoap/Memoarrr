@@ -24,7 +24,10 @@ private: Reward(Rubies r): enumField(r){}; //private constructor
 public:
     int getRubies()const{return (int)enumField;}
     operator int() {return this->getRubies();} //cast operator to int
-   
+   friend ostream& operator<<(ostream &os, Reward &r){
+       os << r.getRubies();
+       return os;
+   }
 };
 
 #endif /* REWARD_H */

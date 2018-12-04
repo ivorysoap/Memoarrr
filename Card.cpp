@@ -1,71 +1,70 @@
-
+#define TEST_CARD
 #include "Card.h"
 #include <iostream>
 
 using namespace std;
+#ifdef TEST_CARD
 
+class Card;
+class CardTest{
+public: 
+    Card *test;
+    CardTest(){
+    Card c(FaceAnimal::OCTOPUS, FaceBackground::PURPLE);
+    test = &c;
+}
+    Card& getTest(){return *test;}
+};
+int main(){
+    CardTest cd;
+    cd.getTest().turnFaceUp();
+    cout << cd.getTest();
+}
+#endif
 const string Card::cardUncovered[3] = {"zzz", "zzz", "zzz"};
 
-Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b){
+Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b), isTurnedUp(false){
     
     switch(enumFace){
         
-        case FaceAnimal::CRAB: dispFace = 'C';
-        case FaceAnimal::PENGUIN: dispFace = 'P';
-        case FaceAnimal::OCTOPUS: dispFace = 'O';
-        case FaceAnimal::TURTLE: dispFace = 'T';
-        case FaceAnimal::WALRUS: dispFace = 'W';     
+        case FaceAnimal::CRAB: dispFace = 'C'; break;
+        case FaceAnimal::PENGUIN: dispFace = 'P'; break;
+        case FaceAnimal::OCTOPUS: dispFace = 'O'; break;
+        case FaceAnimal::TURTLE: dispFace = 'T'; break;
+        case FaceAnimal::WALRUS: dispFace = 'W'; break;
     }
     
     switch(enumBack){
         
-        case FaceBackground::RED: dispBack = 'r';
-        case FaceBackground::GREEN: dispBack = 'g';
-        case FaceBackground::PURPLE: dispBack = 'p';
-        case FaceBackground::BLUE: dispBack = 'b';
-        case FaceBackground::YELLOW: dispBack = 'y';   
-    }
-    
-    for(int i = 0; i<3; i++){       //Loop to fill the 3x3 array cardDisp
-        for(int j = 0; j<3; j++){
-            if((i==1) && (j==1)) cardDisp[i][j] = dispFace;
-            else
-            cardDisp[i][j] = dispBack;
-        }
-    }
+        case FaceBackground::RED: dispBack = 'r'; break;
+        case FaceBackground::GREEN: dispBack = 'g'; break;
+        case FaceBackground::PURPLE: dispBack = 'p'; break;
+        case FaceBackground::BLUE: dispBack = 'b'; break;
+        case FaceBackground::YELLOW: dispBack = 'y'; break;
+    } 
 }
-
 string Card::operator()(int index)const{ //Overload of operator () in order to print out a row of the card as a string
     
     string rowString;
     switch(index){
         case 0:
-            for(int i=0; i<3; i++){
-                rowString.push_back(Card::cardDisp[0][i]);
+            for(int j=0; j<3; j++){
+                rowString.push_back(dispBack);
             }
+            break;
         case 1:
-            for(int i=0; i<3; i++){
-                rowString.push_back(Card::cardDisp[1][i]);
+            for(int j=0; j<3; j++){
+                 if(j==1){ rowString.push_back(dispFace);}
+                 else
+                rowString.push_back(dispBack);
             }
+            break;
         case 2:
-            for(int i=0; i<3; i++){
-                rowString.push_back(Card::cardDisp[2][i]);
-            }    
+            for(int j=0; j<3; j++){
+                rowString.push_back(dispBack);
+            }
+            break;
     }
     return rowString;
 }
 
-ostream& operator<<(ostream& os, const Card& c){
-    
-    if(c.isTurnedUp == true){
-        
-    for(int i=0; i<Card::ROWS; i++){
-        os << c(i)<< endl; }
-    }
-    
-    else {
-        for(int i=0; i<Card::ROWS; i++){
-        os << Card::cardUncovered[i]<< endl; }   
-    }
-    return os;
-}

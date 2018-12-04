@@ -1,3 +1,6 @@
+//#ifndef TEST_BOARD
+//#define TEST_BOARD
+
 #include <iostream>
 #include <vector>
 #include <exception>
@@ -6,6 +9,21 @@
 
 using namespace std;
 
+#ifdef TEST_BOARD
+main(){
+    Board *boarde = new Board();
+    Board::Letter l = Board::A;
+    Board::Number n = Board::ONE;
+    Board::Letter l2 = Board::B;
+    Board::Number n2 = Board::TWO;
+    
+//    boarde.turnFaceUp(l,n);
+//    boarde.turnFaceUp(l,n2);
+//    boarde.turnFaceUp(l2,n);
+//    boarde.turnFaceUp(l2,n2);
+    cout << boarde;
+}
+#endif
 struct no_more_cards : public exception {
     const char * what () const throw () {
         return "No cards remaining in deck.";
@@ -76,7 +94,6 @@ Card* Board::getCard(const Letter &letter, const Number &number){
         return board[letter][number];
     else
         throw out_of_range("Location given out of board range.");
-
 }
 
 void Board::setCard(const Letter &letter, const Number &number, Card *card){
@@ -98,17 +115,7 @@ void Board::reset(){
     for(int i = 0; i < ROWS; i++)
         for(int j = 0; j < COLUMNS; j++)
             board[i][j]->turnFaceDown();
-
 }
 
-//ostream& operator<<(ostream& os, const Board& b){
-//
-//    for(int i=0; i < 5; i++){
-//        for(int j=0; j< 5; j++){
-//            os << *(b.board.at(i).at(j)) << endl;
-//        }
-//    }
-//    return os;
-//
-//}
+
 

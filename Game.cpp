@@ -4,8 +4,6 @@
 #include "Player.h"
 
 
-using namespace std;
-
 /**
  * Returns a number between 0 and 6 corresponding to the current round of the game
  *
@@ -75,16 +73,7 @@ void Game::setCard(const Board::Letter &letter, const Board::Number &number, Car
 
 }
 
-//ostream& operator<<(ostream& os,Game& myGame){ //to be implemented
-//    os << "Players:" << endl;
-//    for(Player p: myGame.getPlayersVect()){
-//        os << p <<endl;
-//    }
-//    
-//    os << "Board"<< endl;
-//    os << myGame.getBoard() << endl;
-//    return os;
-//}
+
 
 
 

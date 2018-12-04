@@ -18,30 +18,38 @@ class Card{
    
     const FaceAnimal enumFace;
     const FaceBackground enumBack;
+    friend class CardTest;
     friend class CardDeck;
     const static int ROWS = 3;
-    bool isTurnedUp = false;
+    bool isTurnedUp;
     const static string cardUncovered[3];
-    char cardDisp[ROWS][3]; //3x3 array to display the card
     char dispFace; char dispBack; // First letter of the Face and Background. Will be usefull to print the card
 
-   
 public:
-    void turnFaceUp(){isTurnedUp = false;}
-    void turnFaceDown(){isTurnedUp = true;}
+    void turnFaceUp(){isTurnedUp = true;}
+    void turnFaceDown(){isTurnedUp = false;}
     bool getIsTurnedUp() const{return isTurnedUp;}
     const int getNRows(){ return ROWS;}
     FaceAnimal getFace()const {return this->enumFace;}
     FaceBackground getBack()const {return this->enumBack;}
-    //string* getCardUncovered(){return cardUncovered;}
-    void print()const;
     string operator()(int) const;
     operator FaceAnimal()const {return this->enumFace;} //cast operator to FaceAnimal
     operator FaceBackground()const {return this->enumBack;} //cast operator to FaceBackground
-    friend ostream& operator<<(ostream&, const Card&);
+    
+    friend ostream& operator<<(ostream &os, Card &c){
+    
+    if (c.getIsTurnedUp() == true){
+    for(int i=0; i<Card::ROWS; i++){
+        os << c(i)<< endl; }
+    }
+    else 
+    {   for(int i=0; i<Card::ROWS; i++){
+        os << Card::cardUncovered[i]<< endl; }   
+    }
+    return os;
+}
 
 private: Card(FaceAnimal, FaceBackground);
-
 };
 
 #endif /* CARD_H */

@@ -18,6 +18,7 @@ class Player{
     string name;
     int rubies = 0;
     bool active;
+    string enumText;
     //bool endOfGame;
       
 public:
@@ -32,8 +33,13 @@ public:
     void addReward(const Reward&);
     //void setDisplayMode(Rules& myRules);
     Side getSide() { return this->enumField;}
+    string getEnumText(){return this->enumText;}
     
-    friend ostream& operator<<(ostream&, const Player&);
+    friend std::ostream& operator<<(ostream &os,  Player &pl){
+           os << pl.getName() << " :" << pl.getEnumText() << endl;
+ 
+    return os;
+    }
 };
 
 
