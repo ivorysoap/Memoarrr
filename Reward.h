@@ -15,7 +15,7 @@ using namespace std;
 enum class Rubies {ONE = 1, TWO, THREE, FOUR};
 
 class Reward{
-    
+    friend class TestReward;
     friend class RewardDeck;
     const Rubies enumField;
 
@@ -24,8 +24,9 @@ private: Reward(Rubies r): enumField(r){}; //private constructor
 public:
     int getRubies()const{return (int)enumField;}
     operator int() {return this->getRubies();} //cast operator to int
-   friend ostream& operator<<(ostream &os, Reward &r){
-       os << r.getRubies();
+   
+    friend ostream& operator<<(ostream &os, Reward &r){
+       os << r.getRubies()<< " Rubies";
        return os;
    }
 };

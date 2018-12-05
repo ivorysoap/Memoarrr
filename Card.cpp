@@ -1,26 +1,27 @@
-#define TEST_CARD
+//#define TEST_CARD
 #include "Card.h"
 #include <iostream>
 
 using namespace std;
-#ifdef TEST_CARD
-
 class Card;
-class CardTest{
+
+#ifdef TEST_CARD
+class TestCard{
 public: 
     Card *test;
-    CardTest(){
+    TestCard(){
     Card c(FaceAnimal::OCTOPUS, FaceBackground::PURPLE);
     test = &c;
 }
     Card& getTest(){return *test;}
 };
 int main(){
-    CardTest cd;
-    cd.getTest().turnFaceUp();
+    TestCard cd;
+    cd.getTest().showCard();
     cout << cd.getTest();
 }
 #endif
+
 const string Card::cardUncovered[3] = {"zzz", "zzz", "zzz"};
 
 Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b), isTurnedUp(false){
@@ -33,7 +34,6 @@ Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b), isTurnedUp
         case FaceAnimal::TURTLE: dispFace = 'T'; break;
         case FaceAnimal::WALRUS: dispFace = 'W'; break;
     }
-    
     switch(enumBack){
         
         case FaceBackground::RED: dispBack = 'r'; break;
@@ -42,6 +42,7 @@ Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b), isTurnedUp
         case FaceBackground::BLUE: dispBack = 'b'; break;
         case FaceBackground::YELLOW: dispBack = 'y'; break;
     } 
+    
 }
 string Card::operator()(int index)const{ //Overload of operator () in order to print out a row of the card as a string
     

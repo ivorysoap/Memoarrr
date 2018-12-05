@@ -9,7 +9,6 @@
 #ifndef CARDDECK_H
 #define CARDDECK_H
 #include "Deck.h"
-#include <stack>
 #include <algorithm>
 #include <random>
 
@@ -18,11 +17,11 @@ using namespace std;
 class CardDeck : public Deck<Card> {
     CardDeck();
     void abstract()override {};
-    
+    ~CardDeck();
 public:
+    
     static CardDeck* cardD;
     static CardDeck& make_CardDeck();
-    
 };
 
 #endif /* CARDDECK_H */

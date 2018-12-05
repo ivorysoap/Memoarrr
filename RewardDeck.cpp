@@ -1,3 +1,4 @@
+//#define TEST_REWARDDECK
 #include "RewardDeck.h"
 #include <iostream>
 #include "Reward.h"
@@ -6,6 +7,17 @@ using namespace std;
 
 class Reward;
 
+#ifdef TEST_REWARDDECK
+int main(){
+        RewardDeck::rewardD->make_RewardDeck();
+    
+    for(int i=0; i<7; i++){
+        Reward *test = RewardDeck::rewardD->getNext();
+        cout << test->getRubies()<< endl;
+    }
+}
+
+#endif
 RewardDeck* RewardDeck::rewardD = nullptr;
 
 RewardDeck::RewardDeck() {
@@ -25,6 +37,8 @@ RewardDeck::RewardDeck() {
 
     Reward rFour(Rubies::FOUR);
     deck.push_back(rFour);
+    
+    it = deck.begin();
 }
 
 RewardDeck& RewardDeck::make_RewardDeck() {

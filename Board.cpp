@@ -1,5 +1,5 @@
-//#ifndef TEST_BOARD
-//#define TEST_BOARD
+
+#define TEST_BOARD
 
 #include <iostream>
 #include <vector>
@@ -11,16 +11,16 @@ using namespace std;
 
 #ifdef TEST_BOARD
 main(){
-    Board *boarde = new Board();
+    Board boarde;
     Board::Letter l = Board::A;
     Board::Number n = Board::ONE;
     Board::Letter l2 = Board::B;
     Board::Number n2 = Board::TWO;
     
-//    boarde.turnFaceUp(l,n);
-//    boarde.turnFaceUp(l,n2);
-//    boarde.turnFaceUp(l2,n);
-//    boarde.turnFaceUp(l2,n2);
+    boarde.turnFaceUp(l,n);
+    boarde.turnFaceUp(l,n2);
+    boarde.turnFaceUp(l2,n);
+    boarde.turnFaceUp(l2,n2);
     cout << boarde;
 }
 #endif
@@ -41,7 +41,7 @@ Board::Board(){
             }
             else {
                 //Get a card from cd and check to see if it is valid.  If a nullptr is obtained, it means cd is empty.  Throw an exception.
-                Card* distributedCard = CardDeck::cardD->getNext();
+                Card* distributedCard = &CardDeck::cardD->getNext();
                 if(distributedCard == nullptr)
                     throw no_more_cards();
                 else
@@ -63,7 +63,7 @@ bool Board::turnFaceUp(const Letter &letter, const Number &number){
 
     if(!board[letter][number]->getIsTurnedUp()){
 
-        board[letter][number]->turnFaceUp();
+        board[letter][number]->showCard();
         return true;
     }
     else{
@@ -75,7 +75,7 @@ bool Board::turnFaceDown(const Letter &letter, const Number &number){
 
     if(board[letter][number]->getIsTurnedUp()){
 
-        board[letter][number]->turnFaceDown();
+        board[letter][number]->hideCard();
         return true;
     }
     else{
@@ -114,7 +114,7 @@ void Board::reset(){
 
     for(int i = 0; i < ROWS; i++)
         for(int j = 0; j < COLUMNS; j++)
-            board[i][j]->turnFaceDown();
+            board[i][j]->hideCard();
 }
 
 

@@ -5,7 +5,6 @@
 #include "Card.h"
 #include "CardDeck.h"
 
-
 class Board {
 
     static const int ROWS = 5;
@@ -32,7 +31,15 @@ public:
 
     void reset();
 
-    friend ostream& operator<<(ostream&, const Board&);
+    friend ostream& operator<<(ostream& os, const Board& b) {
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                os << (*(b.board.at(i).at(j))) << endl;
+            }
+        }
+        return os;
+    }
 
 };
 
