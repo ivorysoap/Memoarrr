@@ -1,5 +1,5 @@
 
-#define TEST_BOARD
+//#define TEST_BOARD
 
 #include <iostream>
 #include <vector>
@@ -11,6 +11,7 @@ using namespace std;
 
 #ifdef TEST_BOARD
 main(){
+    CardDeck::cardD->make_CardDeck();
     Board boarde;
     Board::Letter l = Board::A;
     Board::Number n = Board::ONE;
@@ -41,13 +42,13 @@ Board::Board(){
             }
             else {
                 //Get a card from cd and check to see if it is valid.  If a nullptr is obtained, it means cd is empty.  Throw an exception.
-                Card* distributedCard = &CardDeck::cardD->getNext();
-                if(distributedCard == nullptr)
+                //Card *distributedCard;
+                //distributedCard = CardDeck::cardD->getNext();
+                if(CardDeck::cardD->getNext() == nullptr)
                     throw no_more_cards();
                 else
-                    row.push_back(distributedCard);
+                    row.push_back(CardDeck::cardD->getNext());
             }
-
         }
         board.push_back(row); //Adding the 5 rows to the board vector.
     }

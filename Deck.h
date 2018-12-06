@@ -20,7 +20,7 @@ protected: Deck(){}
 protected: vector<T>& getDeck(){return deck;}
  
 public: 
-    void shuffle() {random_shuffle(deck.begin(), deck.end());}
+    //void shuffle() {random_shuffle(deck.begin(), deck.end());}
     bool isEmpty()const {return deck.empty();}
     
     T* getNext() {

@@ -1,9 +1,18 @@
+#define TEST_GAME
+
 #include <iostream>
 #include <vector>
 #include "Game.h"
 #include "Player.h"
 
-
+int main(){
+    
+    CardDeck::cardD->make_CardDeck();
+    //RewardDeck::rewardD->make_RewardDeck();
+    Board *bd = new Board();
+    Game myGame(bd);
+    cout<< myGame;
+}
 /**
  * Returns a number between 0 and 6 corresponding to the current round of the game
  *

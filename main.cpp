@@ -56,20 +56,3 @@ using namespace std;
 //    return 0;
 //}
 //#endif
-
-//ostream& operator<<(ostream& os,Game& myGame){ 
-//    os << "Players:" << endl;
-//    for(int i=0; i<myGame.getPlayersVect().size(); i++){
-//        os << myGame.getPlayersVect().at(i) <<endl;
-//    }
-//    
-//    os << "Board"<< endl;
-//    os << myGame.getBoard() << endl;
-//    return os;
-//}
-
-
-//ostream& operator<<(ostream& os, const Board& b){
-
-//
-//}

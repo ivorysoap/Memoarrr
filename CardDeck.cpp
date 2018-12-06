@@ -14,7 +14,7 @@ int main(){
     
     for(int i=0; i<25; i++){
         Card *test = CardDeck::cardD->getNext();
-        test->turnFaceUp();
+        test->showCard();
    cout << *test<< endl;
     }
 }
