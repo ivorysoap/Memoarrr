@@ -44,7 +44,9 @@ Card::Card(FaceAnimal a, FaceBackground b): enumFace(a), enumBack(b), isTurnedUp
     } 
     
 }
-string Card::operator()(int index)const{ //Overload of operator () in order to print out a row of the card as a string
+
+///Overload of operator () in order to print out a row of the card as a string
+string Card::operator()(int index)const{
     
     string rowString;
     switch(index){

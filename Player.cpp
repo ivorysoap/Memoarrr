@@ -24,6 +24,11 @@ Player::Player(const string _name): name(_name), active(1){
     }
 }
 
+/**
+ * Adds the number of rubies contained by the Reward in question to the Player's total ruby count.
+ *
+ * @param _reward the Reward whose rubies will be attributed to the Player.
+ */
 void Player::addReward(const Reward & _reward){
     rubies = rubies + _reward.getRubies();
 }

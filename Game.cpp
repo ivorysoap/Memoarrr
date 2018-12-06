@@ -20,7 +20,7 @@ int main(){
 }
 #endif
 /**
- * Returns a number between 0 and 6 corresponding to the current round of the game
+ * Returns a number between 0 and 6 corresponding to the current round of the game.
  *
  * @return round an int between 0 and 6 corresponding to the current round
  */
@@ -56,18 +56,33 @@ Player& Game::getPlayer(const Player::Side &side){
     return players.at(ctr);
 }
 
+/**
+ * Returns pointer to the Card which was last selected.
+ *
+ * @return pointer to the card which was last selected
+ */
 const Card* Game::getPreviousCard(){
 
     return previousCard;
 
 }
 
+/**
+ * Returns pointer to the currently-selected Card.
+ *
+ * @return pointer to the currently-selected Card
+ */
 const Card* Game::getCurrentCard(){
 
     return currentCard;
 
 }
 
+/**
+ * Set the currently-selected Card.  Called when a player picks a Card.
+ *
+ * @param card pointer to the Card to be set as the currently-selected Card
+ */
 void Game::setCurrentCard(Card *card){
 
     previousCard = currentCard;
@@ -76,12 +91,29 @@ void Game::setCurrentCard(Card *card){
 
 }
 
+/**
+ * [WRAPPER OF Board::getCard()]
+ * Returns a pointer to the card at the indicated location.
+ *
+ * @param letter the letter (row) of the card in question
+ * @param number  the number (column) of the card in question
+ * @return a pointer to the card at the indicated location, if a card exists there
+ */
 Card* Game::getCard(const Board::Letter &letter, const Board::Number &number){
 
     return myBoard->getCard(letter, number);
 
 }
 
+/**
+ * [WRAPPER OF Board::setCard()]
+ * Places the indicated card at the indicated location.
+ *
+ * @param letter the letter (row) at which the card should be placed
+ * @param number the number (column) at which the card should be placed
+ * @param card pointer to the card which is to be placed
+ * @throws out_of_range exception if the indicated location is outside the board's bounds, or if the indicated location is the "void" in the board's centre
+ */
 void Game::setCard(const Board::Letter &letter, const Board::Number &number, Card *card){
 
     myBoard->setCard(letter, number, card);

@@ -59,12 +59,26 @@ Board::Board(){
     }
 }
 
+/**
+ * Indicates whether a card at a given position is face-up or face-down.
+ *
+ * @param letter the letter (row) of the card in question
+ * @param number the number (column) of the card in question
+ * @return boolean value representing the state of the card: true for face-up, false for turned-down
+ */
 bool Board::isFaceUp(const Letter &letter, const Number &number){
 
     return board[letter][number]->getIsTurnedUp(); //returns the isTurnedUp value belonging to the Card in question
 
 }
 
+/**
+ * Turns the card at the given position face-up.
+ *
+ * @param letter the letter (row) of the card in question
+ * @param number  the number (column) of the card in question
+ * @return boolean value: true if the card was turned face-up successfully, false if the card was already face-up
+ */
 bool Board::turnFaceUp(const Letter &letter, const Number &number){
 
     if(!board[letter][number]->getIsTurnedUp()){
@@ -77,6 +91,13 @@ bool Board::turnFaceUp(const Letter &letter, const Number &number){
     }
 }
 
+/**
+ * Turns the card at the given position face-down.
+ *
+ * @param letter the letter (row) of the card in question
+ * @param number  the number (column) of the card in question
+ * @return boolean value: true if the card was turned face-down successfully, false if the card was already face-down
+ */
 bool Board::turnFaceDown(const Letter &letter, const Number &number){
 
     if(board[letter][number]->getIsTurnedUp()){
@@ -89,6 +110,14 @@ bool Board::turnFaceDown(const Letter &letter, const Number &number){
     }
 }
 
+/**
+ * Returns a pointer to the card at the indicated location.
+ *
+ * @param letter the letter (row) of the card in question
+ * @param number  the number (column) of the card in question
+ * @return a pointer to the card at the indicated location, if a card exists there
+ * @throws out_of_range exception if the indicated location is outside the board's bounds, or if there is no card at the given location
+ */
 Card* Board::getCard(const Letter &letter, const Number &number){
 
     if(letter >= 1
@@ -102,6 +131,14 @@ Card* Board::getCard(const Letter &letter, const Number &number){
         throw out_of_range("Location given out of board range.");
 }
 
+/**
+ * Places the indicated card at the indicated location.
+ *
+ * @param letter the letter (row) at which the card should be placed
+ * @param number the number (column) at which the card should be placed
+ * @param card pointer to the card which is to be placed
+ * @throws out_of_range exception if the indicated location is outside the board's bounds, or if the indicated location is the "void" in the board's centre
+ */
 void Board::setCard(const Letter &letter, const Number &number, Card *card){
 
     if(letter >= 1
@@ -116,6 +153,9 @@ void Board::setCard(const Letter &letter, const Number &number, Card *card){
 
 }
 
+/**
+ * Turns face-down all cards on the board.
+ */
 void Board::reset(){
 
     for(int i = 0; i < ROWS; i++)

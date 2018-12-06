@@ -11,8 +11,8 @@
 
 using namespace std;
 
- enum class FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS};
- enum class FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW};
+ enum class FaceAnimal {CRAB, PENGUIN, OCTOPUS, TURTLE, WALRUS};  ///Enumeration of the possible animals.
+ enum class FaceBackground {RED, GREEN, PURPLE, BLUE, YELLOW}; ///Enumeraton of the possible backgrounds.
 
 class Card{
    
@@ -29,16 +29,17 @@ class Card{
 private: Card(FaceAnimal, FaceBackground);
 
 public:
-    void showCard(){isTurnedUp = true;}
-    void hideCard(){isTurnedUp = false;}
-    bool getIsTurnedUp() const{return isTurnedUp;}
+    void showCard(){isTurnedUp = true;} ///Turn card face-up.
+    void hideCard(){isTurnedUp = false;} ///Turn card face-down.
+    bool getIsTurnedUp() const{return isTurnedUp;} ///Getter for face-up status.
     const int getNRows(){ return ROWS;}
-    FaceAnimal getFace()const {return this->enumFace;}
-    FaceBackground getBack()const {return this->enumBack;}
+    FaceAnimal getFace()const {return this->enumFace;} ///Getter for card animal.
+    FaceBackground getBack()const {return this->enumBack;} ///Getter for card background.
     string operator()(int) const;
-    operator FaceAnimal()const {return this->enumFace;} //cast operator to FaceAnimal
-    operator FaceBackground()const {return this->enumBack;} //cast operator to FaceBackground
-    
+    operator FaceAnimal()const {return this->enumFace;} ///cast operator to FaceAnimal
+    operator FaceBackground()const {return this->enumBack;} ///cast operator to FaceBackground
+
+    ///Overload of << operator for printing purposes.
     friend ostream& operator<<(ostream &os, Card &c){
     
    if (c.isTurnedUp == true){

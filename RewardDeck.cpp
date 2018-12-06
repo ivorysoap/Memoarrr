@@ -41,6 +41,11 @@ RewardDeck::RewardDeck() {
     it = deck.begin();
 }
 
+/**
+ * Instantiate the RewardDeck (singleton).
+ *
+ * @return the instantiated RewardDeck
+ */
 RewardDeck& RewardDeck::make_RewardDeck() {
     if (rewardD == nullptr) {
 

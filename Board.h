@@ -11,13 +11,13 @@ class Board {
     static const int COLUMNS = 5;
     static const int HOLE_ROW  = 3;
     static const int HOLE_COLUMN = 3;
-public: Board();
-    //2D vector. Holds a vector of five rows, each of which holds five pointers to Cards.
-    vector< vector<Card*> > board;
-
 public:
-    enum Letter {A = 1, B, C, D, E};
-    enum Number {ONE = 1, TWO ,THREE, FOUR, FIVE};
+    Board();
+
+    vector< vector<Card*> > board; ///2D vector. Holds a vector of five rows, each of which holds five pointers to Cards.
+
+    enum Letter {A = 1, B, C, D, E}; ///Enumeration of letters (rows) of the board.
+    enum Number {ONE = 1, TWO ,THREE, FOUR, FIVE}; ///Enumeration of numbers (cols) of the board.
 
     bool isFaceUp(const Letter&, const Number&);
 
@@ -31,6 +31,7 @@ public:
 
     void reset();
 
+    ///Overloading of operator << for printing purposes
     friend ostream& operator<<(ostream& os, const Board& b) {
 
         for (int i = 0; i < 5; i++) {

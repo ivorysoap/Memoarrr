@@ -9,10 +9,10 @@ class Game {
 private:
 
     Board* myBoard;
-    int round;
-    Card* currentCard = nullptr;
-    Card* previousCard = nullptr;
-    vector<Player> players;
+    int round; ///Represents current round.
+    Card* currentCard = nullptr; ///Represents currently-selected Card.
+    Card* previousCard = nullptr; ///Represents previously-selected Card.
+    vector<Player> players; ///Contains all Players participating in the Game.
 
 public:
     
@@ -37,7 +37,8 @@ public:
     void setCard(const Board::Letter&, const Board::Number&, Card*);
     
     Board& getBoard(){return *myBoard;}
-    
+
+    ///Overload of << operator for printing purposes.
     friend ostream& operator<<(ostream& os, Game& myGame) {
         
         os << "Players:" << endl;

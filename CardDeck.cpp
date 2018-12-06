@@ -33,6 +33,11 @@ CardDeck:: CardDeck(){
     } it = deck.begin();
 }
 
+/**
+ * Instantiate the CardDeck (singleton).
+ *
+ * @return the instantiated CardDeck
+ */
 CardDeck &CardDeck::make_CardDeck(){
     
     if(CardDeck::cardD == nullptr){  
