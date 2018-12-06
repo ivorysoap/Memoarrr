@@ -1,4 +1,4 @@
-#define TEST_GAME
+//#define TEST_GAME
 
 #include <iostream>
 #include <vector>
@@ -8,9 +8,13 @@
 int main(){
     
     CardDeck::cardD->make_CardDeck();
-    //RewardDeck::rewardD->make_RewardDeck();
+
     Board *bd = new Board();
     Game myGame(bd);
+    Player one("Victor Hugo");
+    Player two("Guy de Maupassant");
+    myGame.addPlayer(one);
+    myGame.addPlayer(two);
     cout<< myGame;
 }
 /**

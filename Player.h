@@ -29,6 +29,7 @@ public:
     string getName() const {return name;}
     void setActive(bool) {active = true;}
     bool isActive() const {return active;}
+    string getStatus(){if(this->active) return "Active"; else return "Inactive";}
     int getNRubies() const {return rubies;}
     void addReward(const Reward&);
     //void setDisplayMode(Rules& myRules);
@@ -36,7 +37,7 @@ public:
     string getEnumText(){return this->enumText;}
     
     friend std::ostream& operator<<(ostream &os,  Player &pl){
-           os << pl.getName() << " :" << pl.getEnumText() << endl;
+           os << pl.getName() << " :" << pl.getEnumText()<<" (" << pl.getStatus()<< ")" << endl;
  
     return os;
     }

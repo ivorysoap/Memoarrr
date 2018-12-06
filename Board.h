@@ -36,8 +36,7 @@ public:
         for (int i = 0; i < 5; i++) {
             os << endl;
             for (int j = 0; j < 5; j++) {
-                os << *(b.board.at(i).at(j))<< '\n';
-               // os << flush;
+                os <<*(b.board.at(i).at(j));
             }
         }
         return os;

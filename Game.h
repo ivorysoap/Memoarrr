@@ -41,7 +41,7 @@ public:
     friend ostream& operator<<(ostream& os, Game& myGame) {
         os << "Players:" << endl;
         for (int i = 0; i < myGame.getPlayersVect().size(); i++) {
-            os << myGame.getPlayersVect().at(i) << endl;
+            os << myGame.getPlayersVect().at(i)<< " "<< endl;
         }
 
         os << "Board" << endl;
