@@ -43,11 +43,11 @@ public:
     
    if (c.isTurnedUp == true){
     for(int i=0; i<Card::ROWS; i++){
-        os << c(i)<< endl; }
+        os <<" "<< c(i)<< endl; }
     }
     else 
     {   for(int i=0; i<Card::ROWS; i++){
-        os << Card::cardUncovered[i]<< endl; }   
+        os <<" "<< Card::cardUncovered[i] << endl; }   
     }
     return os;
 }

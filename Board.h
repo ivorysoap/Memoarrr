@@ -34,13 +34,14 @@ public:
     friend ostream& operator<<(ostream& os, const Board& b) {
 
         for (int i = 0; i < 5; i++) {
+            os << endl;
             for (int j = 0; j < 5; j++) {
-                os << (*(b.board.at(i).at(j))) << endl;
+                os << *(b.board.at(i).at(j))<< '\n';
+               // os << flush;
             }
         }
         return os;
     }
-
 };
 
 #endif //MEMOARRR_BOARD_H

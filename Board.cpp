@@ -44,10 +44,15 @@ Board::Board(){
                 //Get a card from cd and check to see if it is valid.  If a nullptr is obtained, it means cd is empty.  Throw an exception.
                 //Card *distributedCard;
                 //distributedCard = CardDeck::cardD->getNext();
-                if(CardDeck::cardD->getNext() == nullptr)
-                    throw no_more_cards();
+                try{
+                    
+                if(CardDeck::cardD->getNext() == nullptr){
+                    throw no_more_cards();}
+                 
+                //catch (no_more_cards& e){}
                 else
                     row.push_back(CardDeck::cardD->getNext());
+                } catch (no_more_cards& e){}
             }
         }
         board.push_back(row); //Adding the 5 rows to the board vector.
