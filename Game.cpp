@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Player.h"
 
+#ifdef TEST_GAME
 int main(){
     
     CardDeck::cardD->make_CardDeck();
@@ -17,6 +18,7 @@ int main(){
     myGame.addPlayer(two);
     cout<< myGame;
 }
+#endif
 /**
  * Returns a number between 0 and 6 corresponding to the current round of the game
  *

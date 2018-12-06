@@ -24,6 +24,7 @@ CardDeck* CardDeck::cardD = nullptr;
 
 CardDeck:: CardDeck(){
 
+    //generates all 25 cards and push them in deck
     for(int i=0; i<5; i++){
         for(int j=0; j<5; j++){
             Card cd(static_cast<FaceAnimal> (i),static_cast<FaceBackground> (j));

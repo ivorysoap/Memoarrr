@@ -39,6 +39,7 @@ public:
     Board& getBoard(){return *myBoard;}
     
     friend ostream& operator<<(ostream& os, Game& myGame) {
+        
         os << "Players:" << endl;
         for (int i = 0; i < myGame.getPlayersVect().size(); i++) {
             os << myGame.getPlayersVect().at(i)<< " "<< endl;

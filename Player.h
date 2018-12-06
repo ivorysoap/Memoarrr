@@ -19,20 +19,20 @@ class Player{
     int rubies = 0;
     bool active;
     string enumText;
-    //bool endOfGame;
+
       
 public:
     enum Side {TOP = 1, BOTTOM, LEFT, RIGHT} enumField;
     static int player_count; //keeps the number of players and thus assign the player side when player object is created
     Player(const string _name);
-    //bool getEndOfGame(){return endOfGame;}
+
     string getName() const {return name;}
     void setActive(bool) {active = true;}
     bool isActive() const {return active;}
     string getStatus(){if(this->active) return "Active"; else return "Inactive";}
     int getNRubies() const {return rubies;}
     void addReward(const Reward&);
-    //void setDisplayMode(Rules& myRules);
+
     Side getSide() { return this->enumField;}
     string getEnumText(){return this->enumText;}
     

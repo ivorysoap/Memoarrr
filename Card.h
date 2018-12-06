@@ -24,7 +24,7 @@ class Card{
     bool isTurnedUp;
     const static string cardUncovered[3];
     char dispFace; char dispBack; // First letter of the Face and Background. Will be usefull to print the card
-    char cardDisp[3][3];
+    char cardDisp[3][3]; //not used
 
 private: Card(FaceAnimal, FaceBackground);
 
@@ -43,7 +43,7 @@ public:
     
    if (c.isTurnedUp == true){
     for(int i=0; i<Card::ROWS; i++){
-        os <<" "<< c(i)<< endl; }
+        os <<" "<< c(i)<< endl; }     //uses overloaded () operator to fetch string at index
     }
     else 
     {   for(int i=0; i<Card::ROWS; i++){

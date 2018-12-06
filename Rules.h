@@ -17,11 +17,12 @@ protected: typename std::vector<Player>::iterator it;
 protected: Player *ptr;
 
 public:
-    //the following bool methods are supposed to have a const argument Game.
+    //the following bool methods are supposed to have a const argument Game. Removed them because throw errors
     bool isValid(Game&);
     bool gameOver(Game&);
     bool roundOver(Game&);
-    const Player& getNextPlayer(Game&);
+    Player& getNextPlayer(Game&);
+    
 };
 
 #endif /* RULES_H */

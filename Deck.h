@@ -17,16 +17,16 @@ protected: typename std::vector<T> deck;
 protected: typename std::vector<T>:: iterator it;
 protected: T* ptr; // pointer to collect address pointed by iterator it
 protected: Deck(){}
-protected: vector<T>& getDeck(){return deck;}
+
  
 public: 
-    //void shuffle() {random_shuffle(deck.begin(), deck.end());}
+    void shuffle() {random_shuffle(deck.begin(), deck.end());} //method throw errors. Have to do with swapping elems in vector.
     bool isEmpty()const {return deck.empty();}
     
     T* getNext() {
 
         if (it != deck.end()) {
-            ptr = &(*it);
+            ptr = &(*it); //in order to return a pointer
             it++;
             return ptr;
         } else {
@@ -34,7 +34,7 @@ public:
         }
     }
     
-    virtual void abstract() = 0;
+    virtual void abstract() = 0; //virtual pure to make class Deck abstract
     
 };
 #endif /* DECK_H */
