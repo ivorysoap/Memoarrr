@@ -22,6 +22,7 @@ public:
     bool gameOver(Game&);
     bool roundOver(Game&);
     Player& getNextPlayer(Game&);
+    Player* getCurrentPlayer(){return ptr;}
     
 };
 
