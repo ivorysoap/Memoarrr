@@ -14,7 +14,7 @@ class RewardDeck : public Deck<Reward> {
     
     RewardDeck();
     void abstract() override{};
-     ~RewardDeck();
+     //~RewardDeck();
     
 public:
     static RewardDeck* rewardD;

@@ -17,7 +17,7 @@ using namespace std;
 class CardDeck : public Deck<Card> {
     CardDeck();
     void abstract()override {};
-    ~CardDeck();
+    //~CardDeck();
 public:
     
     static CardDeck* cardD;

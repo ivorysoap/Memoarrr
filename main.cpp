@@ -22,7 +22,7 @@ using namespace std;
 //Main function is incomplete!
 
 int main();
-string getUserInput();
+char getUserInput(string message);
 
 int main() {
     //instance varibles
@@ -77,8 +77,8 @@ int main() {
 
         while(!myRules.roundOver(myGame)){
 
-            Board::Letter letter = static_cast<Board::Letter>(getUserInput("Please select a card by entering a row between 1 and 5: "));
-            Board::Number number = static_cast<Board::Number>(getUserInput("Please select a card by entering a column between 1 and 5: "));
+            Board::Number number = static_cast<Board::Number>(getUserInput("Please select a card by entering a row between 1 and 5: "));
+            Board::Letter letter = static_cast<Board::Letter>(getUserInput("Please select a card by entering a col between A and E: "));
 
             myGame.setCurrentCard(myGame.getCard(letter, number)); ///Setting chosen card as current card
 
@@ -114,14 +114,14 @@ int main() {
     return 0;
 }
 
-char getUserInput(string output){
+char getUserInput(const string message){
 
-    if(output != "")
-        cout << output;
-    char input;
-    cin >> input;
+    if(message != "")
+        cout << message;
+    char userinput;
+    cin >> userinput;
 
-    return input;
+    return userinput;
 
 }
 
